@@ -26,7 +26,7 @@
 >
   <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
     <Button href="/" variant="ghost" class="text-xl font-bold text-primary">
-        <AuroraText className="font-bold">LGV</AuroraText>
+        <span class="font-bold">LGV</span>
     </Button>
 
     <!-- Desktop Navigation -->
