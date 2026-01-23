@@ -21,7 +21,7 @@
 <nav
   class={[
     "z-50 fixed top-0 left-0 right-0 transition-all duration-300",
-    isScrolled ?? "bg-background/80 backdrop-blur-lg border-b border-border",
+    isScrolled ? "bg-background/70 backdrop-blur-md border-b border-border" : "",
   ]}
 >
   <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">

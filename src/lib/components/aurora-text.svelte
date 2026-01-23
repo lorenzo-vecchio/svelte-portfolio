@@ -6,7 +6,7 @@
 
 <span
   class={cn(
-    "bg-clip-text text-transparent animate-aurora-text bg-white",
+    "bg-clip-text text-transparent animate-aurora-text bg-white px-2",
     "bg-[length:300%_300%] bg-no-repeat",
     className,
   )}
