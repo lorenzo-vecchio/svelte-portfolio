@@ -1,50 +1,21 @@
-<script lang="ts">
-  import type { Snippet } from "svelte";
-
-  interface Props {
-    className?: string;
-    children?: Snippet;
-  }
-
-  let { children, className }: Props = $props();
+<script>
+  import { cn } from "$lib/utils";
+  let className = "";
+  export { className as class };
 </script>
 
-<span class={["aurora-text", className ? className : ""]}>
-  {@render children?.()}
+<span
+  class={cn(
+    "bg-clip-text text-transparent animate-aurora-text bg-white",
+    "bg-[length:300%_300%] bg-no-repeat",
+    className,
+  )}
+>
+  <slot>Svelte Aurora</slot>
 </span>
+
 <style>
-  .aurora-text {
-    position: relative;
-    display: inline-block;
-    background: linear-gradient(
-      120deg,
-      #7dd3fc,
-      #a78bfa,
-      #f472b6,
-      #34d399,
-      #7dd3fc
-    );
-    background-size: 300% 300%;
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    animation: aurora 12s ease-in-out infinite;
-  }
-
-  .aurora-text::after {
-    content: attr(data-text);
-    position: absolute;
-    inset: 0;
-    filter: blur(12px);
-    opacity: 0.6;
-    z-index: -1;
-    background: inherit;
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
-
-  @keyframes aurora {
+  @keyframes aurora-text {
     0% {
       background-position: 0% 50%;
     }
@@ -54,5 +25,29 @@
     100% {
       background-position: 0% 50%;
     }
+  }
+
+  .animate-aurora-text {
+    animation: aurora-text 10s ease infinite;
+    background-image: radial-gradient(
+        circle at 10% 20%,
+        hsl(var(--color-1)) 0%,
+        transparent 40%
+      ),
+      radial-gradient(
+        circle at 90% 80%,
+        hsl(var(--color-2)) 0%,
+        transparent 40%
+      ),
+      radial-gradient(
+        circle at 50% 50%,
+        hsl(var(--color-3)) 0%,
+        transparent 40%
+      ),
+      radial-gradient(
+        circle at 20% 80%,
+        hsl(var(--color-4)) 0%,
+        transparent 40%
+      );
   }
 </style>
