@@ -99,3 +99,22 @@
     class="absolute bottom-1/4 left-0 w-64 h-64 bg-primary/20 rounded-full blur-3xl pointer-events-none"
   />
 </section>
+
+<style>
+  @keyframes pulse-glow {
+    0%,
+    100% {
+      filter: brightness(100%) saturate(100%);
+      text-shadow: 0 0 0px hsl(var(--primary) / 0);
+    }
+    50% {
+      filter: brightness(150%) saturate(150%);
+      /* A subtle text-shadow helps "bleed" the light outside the letters */
+      text-shadow: 0 0 8px hsl(var(--primary) / 0.5);
+    }
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 4s ease-in-out infinite;
+  }
+</style>
