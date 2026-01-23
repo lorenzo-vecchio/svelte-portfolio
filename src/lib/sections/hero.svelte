@@ -102,15 +102,20 @@
 
 <style>
   @keyframes pulse-glow {
-    0%,
-    100% {
+    0% {
+      transform: scale(0.9);
       filter: brightness(100%) saturate(100%);
-      text-shadow: 0 0 0px hsl(var(--primary) / 0);
+      box-shadow: 0 0 0 0 hsl(var(--color-primary) / 0.7);
     }
     50% {
+      transform: scale(1);
       filter: brightness(150%) saturate(150%);
-      /* A subtle text-shadow helps "bleed" the light outside the letters */
-      text-shadow: 0 0 8px hsl(var(--primary) / 0.5);
+      box-shadow: 0 0 0 5px hsl(var(--color-primary) / 0);
+    }
+    100% {
+      transform: scale(0.9);
+      filter: brightness(100%) saturate(100%);
+      box-shadow: 0 0 0 0 hsl(var(--color-primary) / 0.7);
     }
   }
 
