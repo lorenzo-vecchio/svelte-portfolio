@@ -4,7 +4,7 @@
   import { ChevronDown, Github, Linkedin, Mail, MapPin } from "@lucide/svelte";
 </script>
 
-<section class="min-h-screen flex flex-col justify-center relative px-6 py-20">
+<section class="min-h-screen flex flex-col justify-center relative px-6 py-20" id="hero">
   <div class="max-w-4xl mx-auto w-full z-20">
     <!-- Status badge -->
     <div
