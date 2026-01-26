@@ -1,6 +1,7 @@
 <script>
   import AuroraText from "$lib/components/aurora-text.svelte";
   import { Button } from "$lib/components/ui/button";
+  import { contacts } from "$lib/conf";
   import { ChevronDown, Github, Linkedin, Mail, MapPin } from "@lucide/svelte";
 </script>
 
@@ -63,7 +64,7 @@
       </Button>
       <Button variant="outline" size="lg">
         <a
-          href="https://www.linkedin.com/in/lorenzo-giovanni-vecchio/"
+          href={contacts.linkedin}
           target="_blank"
           rel="noopener noreferrer"
           class="flex flex-row"
@@ -74,7 +75,7 @@
       </Button>
       <Button variant="outline" size="lg">
         <a
-          href="https://github.com/lorenzo-vecchio/"
+          href={contacts.github}
           target="_blank"
           rel="noopener noreferrer"
           class="flex flex-row"
