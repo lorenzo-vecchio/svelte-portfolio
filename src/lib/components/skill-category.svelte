@@ -24,7 +24,7 @@
     </CardTitle>
   </CardHeader>
   <CardContent>
-    <div class="flex flex-wrap gap-3">
+    <div class="flex flex-wrap gap-3 justify-center items-center content-center">
       {#each category.skills as skill}
         <SkillCard {skill} />
       {/each}
