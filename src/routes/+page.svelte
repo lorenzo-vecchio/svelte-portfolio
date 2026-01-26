@@ -1,6 +1,7 @@
 <script>
   import Contact from "$lib/sections/contact.svelte";
   import Experience from "$lib/sections/experience.svelte";
+  import Footer from "$lib/sections/footer.svelte";
   import Hero from "$lib/sections/hero.svelte";
   import Skills from "$lib/sections/skills.svelte";
 
@@ -11,4 +12,6 @@
   <Experience />
   <Skills />
   <Contact />
+
+  <Footer />
 </div>
