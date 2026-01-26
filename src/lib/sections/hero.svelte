@@ -5,7 +5,10 @@
   import { ChevronDown, Github, Linkedin, Mail, MapPin } from "@lucide/svelte";
 </script>
 
-<section class="min-h-screen flex flex-col justify-center relative px-6 py-20" id="hero">
+<section
+  class="min-h-screen flex flex-col justify-center relative px-6 py-20"
+  id="hero"
+>
   <div class="max-w-4xl mx-auto w-full z-20">
     <!-- Status badge -->
     <div
@@ -56,33 +59,31 @@
       class="flex flex-wrap gap-4 animate-fade-in"
       style="animation-delay: 0.4s"
     >
-      <Button size="lg">
-        <a href="#contact" class="flex flex-row">
-          <Mail class="w-4 h-4 mr-2" />
-          Get in touch
-        </a>
+      <Button size="lg" href="#contact" class="flex flex-row">
+        <Mail class="w-4 h-4 mr-2" />
+        Get in touch
       </Button>
-      <Button variant="outline" size="lg">
-        <a
-          href={contacts.linkedin}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="flex flex-row"
-        >
-          <Linkedin class="w-4 h-4 mr-2" />
-          LinkedIn
-        </a>
+      <Button
+        variant="outline"
+        size="lg"
+        href={contacts.linkedin}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex flex-row"
+      >
+        <Linkedin class="w-4 h-4 mr-2" />
+        LinkedIn
       </Button>
-      <Button variant="outline" size="lg">
-        <a
-          href={contacts.github}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="flex flex-row"
-        >
-          <Github class="w-4 h-4 mr-2" />
-          GitHub
-        </a>
+      <Button
+        variant="outline"
+        size="lg"
+        href={contacts.github}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex flex-row"
+      >
+        <Github class="w-4 h-4 mr-2" />
+        GitHub
       </Button>
     </div>
   </div>
