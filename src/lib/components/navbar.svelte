@@ -44,23 +44,26 @@
     </div>
 
     <!-- Mobile Menu Button -->
-  <button
-    class="md:hidden inline-flex items-center justify-center rounded-md p-2 hover:bg-muted"
-    onclick={() => (isMobileMenuOpen = !isMobileMenuOpen)}
-  >
-    {#if isMobileMenuOpen}
-      <X class="w-5 h-5" />
-    {:else}
-      <Menu class="w-5 h-5" />
-    {/if}
-  </button>
+    <button
+      class="md:hidden inline-flex items-center justify-center rounded-md p-2 hover:bg-muted"
+      onclick={() => (isMobileMenuOpen = !isMobileMenuOpen)}
+    >
+      {#if isMobileMenuOpen}
+        <X class="w-5 h-5" />
+      {:else}
+        <Menu class="w-5 h-5" />
+      {/if}
+    </button>
   </div>
-
-  
 
   <!-- Mobile Menu -->
   {#if isMobileMenuOpen}
-    <div class="md:hidden bg-background border-b border-border h-screen w-screen flex flex-col justify-between items-center">
+    <div
+      class={[
+        "md:hidden border-b border-border h-screen w-screen flex flex-col justify-between items-center",
+        isScrolled ? "bg-background/70 backdrop-blur-md" : "bg-background",
+      ]}
+    >
       <div></div>
       <div class="space-y-2 flex flex-col justify-center items-center">
         {#each navItems as item}
