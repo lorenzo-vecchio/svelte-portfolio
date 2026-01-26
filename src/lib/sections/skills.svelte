@@ -1,12 +1,5 @@
 <script>
-  import SkillCard from "$lib/components/skill-card.svelte";
   import SkillCategory from "$lib/components/skill-category.svelte";
-  import {
-    Card,
-    CardContent,
-    CardHeader,
-    CardTitle,
-  } from "$lib/components/ui/card";
   import { skillCategories } from "$lib/conf";
 </script>
 
