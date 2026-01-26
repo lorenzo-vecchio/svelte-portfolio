@@ -63,7 +63,7 @@
       </Button>
       <Button variant="outline" size="lg">
         <a
-          href="https://linkedin.com/in/"
+          href="https://www.linkedin.com/in/lorenzo-giovanni-vecchio/"
           target="_blank"
           rel="noopener noreferrer"
           class="flex flex-row"
@@ -74,7 +74,7 @@
       </Button>
       <Button variant="outline" size="lg">
         <a
-          href="https://github.com/"
+          href="https://github.com/lorenzo-vecchio/"
           target="_blank"
           rel="noopener noreferrer"
           class="flex flex-row"
