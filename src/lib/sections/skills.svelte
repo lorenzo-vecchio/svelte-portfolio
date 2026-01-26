@@ -1,5 +1,6 @@
 <script>
   import SkillCard from "$lib/components/skill-card.svelte";
+  import SkillCategory from "$lib/components/skill-category.svelte";
   import {
     Card,
     CardContent,
@@ -18,26 +19,7 @@
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       {#each skillCategories as category, index}
-        <Card
-          class="card-shadow hover:border-primary/50 transition-colors animate-fade-in"
-          style="animation-delay: {index * 0.1}s"
-        >
-          <CardHeader class="pb-4">
-            <CardTitle class="flex items-center gap-3 text-lg">
-              <span class="p-2 rounded-lg bg-primary/10 text-primary">
-                <svelte:component this={category.icon} class="w-5 h-5" />
-              </span>
-              {category.title}
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div class="flex flex-wrap gap-3">
-              {#each category.skills as skill}
-                <SkillCard {skill} />
-              {/each}
-            </div>
-          </CardContent>
-        </Card>
+        <SkillCategory {category} {index} />
       {/each}
     </div>
   </div>
