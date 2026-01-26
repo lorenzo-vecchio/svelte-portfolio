@@ -1,6 +1,5 @@
 <script lang="ts">
   import "./layout.css";
-  import favicon from "$lib/assets/favicon.svg";
   import { ModeWatcher } from "mode-watcher";
   import Navbar from "$lib/components/navbar.svelte";
 
@@ -8,7 +7,6 @@
 </script>
 
 <svelte:head>
-  <link rel="icon" href={favicon} />
   <title>Lorenzo Vecchio | Full-Stack Software Developer</title>
   <meta
     name="description"
