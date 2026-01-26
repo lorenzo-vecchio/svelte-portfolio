@@ -1,4 +1,4 @@
-import { CodeXml, Globe, Server, Wrench } from "@lucide/svelte";
+import { CodeXml, Globe, Server, Terminal, Wrench } from "@lucide/svelte";
 import type { Component, Snippet } from "svelte";
 
 export interface Skill {
@@ -44,6 +44,17 @@ export const skillCategories: SkillCategory[] = [
       { name: "4D Orda", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
       { name: "Agile/Scrum", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg" },
     ],
+  },
+  {
+    title: "Programming Languages",
+    icon: Terminal,
+    skills: [
+      { name: "JavaScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
+      { name: "TypeScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
+      { name: "Java", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
+      { name: "Go", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg" },
+      { name: "Python", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
+    ]
   },
   {
     title: "Languages",

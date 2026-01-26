@@ -18,7 +18,7 @@
   <CardHeader class="pb-4">
     <CardTitle class="flex items-center gap-3 text-lg">
       <span class="p-2 rounded-lg bg-primary/10 text-primary">
-        <svelte:component this={category.icon} class="w-5 h-5" />
+        <category.icon class="w-5 h-5" />
       </span>
       {category.title}
     </CardTitle>
