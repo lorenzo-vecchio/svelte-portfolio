@@ -8,6 +8,7 @@
 
   let isScrolled = $state(false);
   let isMobileMenuOpen = $state(false);
+  let outerHeight = $state(0);
 
   onMount(() => {
     const handleScroll = () => {
@@ -19,6 +20,8 @@
     return () => window.removeEventListener("scroll", handleScroll);
   });
 </script>
+
+<svelte:window bind:outerHeight={outerHeight} />
 
 <nav
   class={[
@@ -62,9 +65,10 @@
 
   <!-- Mobile Menu -->
   {#if isMobileMenuOpen}
-    <div class="md:hidden bg-background border-b border-border h-screen .fullscreen-h w-screen flex flex-col justify-between items-center">
+    <div class="fixed top-10 left-0 md:hidden bg-background border-b border-border pb-[env(safe-area-inset-bottom)] w-screen flex flex-col justify-start items-center"
+      style="min-height: {outerHeight - 70}px">
       <div></div>
-      <div class="space-y-2 flex flex-col justify-center items-center">
+      <div class="space-y-2 flex flex-col justify-center items-center mt-14 mb-10">
         {#each navItems as item}
           <a
             href={item.href}
@@ -76,16 +80,6 @@
         {/each}
       </div>
       <ThemeButton />
-      <div class="mb-14">
-        <Footer />
-      </div>
     </div>
   {/if}
 </nav>
-
-<style>
-  .fullscreen-h {
-    min-height: 100vh; 
-    min-height: -webkit-fill-available;
-  }
-</style>
