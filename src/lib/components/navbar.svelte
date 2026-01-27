@@ -15,6 +15,8 @@
       isScrolled = window.scrollY > 20;
     };
 
+    handleScroll(); // Initial check
+
     window.addEventListener("scroll", handleScroll);
 
     return () => window.removeEventListener("scroll", handleScroll);
