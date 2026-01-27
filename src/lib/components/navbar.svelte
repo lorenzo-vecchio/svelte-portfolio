@@ -66,7 +66,7 @@
   <!-- Mobile Menu -->
   {#if isMobileMenuOpen}
     <div class="fixed top-10 left-0 md:hidden bg-background border-b border-border pb-[env(safe-area-inset-bottom)] w-screen flex flex-col justify-start items-center"
-      style="min-height: {outerHeight - 70}px">
+      style="min-height: {outerHeight}px">
       <div></div>
       <div class="space-y-2 flex flex-col justify-center items-center mt-14 mb-10">
         {#each navItems as item}
