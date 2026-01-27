@@ -9,6 +9,12 @@
         <p class="text-sm text-muted-foreground">
           © {year} Lorenzo Giovanni Vecchio. All rights reserved.
         </p>
+        <a
+          href="/privacy"
+          class="text-sm text-muted-foreground hover:text-primary transition-colors underline ml-2"
+        >
+          Privacy Policy
+        </a>
 
         <div class="flex items-center gap-4">
           <a
