@@ -15,7 +15,6 @@ export const projects: Project[] = [
         technologies: ["SvelteKit", "Tailwind CSS", "TypeScript", "ShadcnUI", "Docker", "Nginx"],
         liveUrl: "https://lorenzovecchio.dev",
         githubUrl: "https://github.com/lorenzo-vecchio/svelte-portfolio",
-        upcoming: true
     },
     {
         title: "Old Portfolio Website",
