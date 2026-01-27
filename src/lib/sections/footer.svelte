@@ -6,15 +6,15 @@
 </script>
 <footer class="py-8 px-6 border-t border-border">
       <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-        <p class="text-sm text-muted-foreground">
+        <p class="text-sm text-muted-foreground flex flex-col md:flex-row items-center">
           © {year} Lorenzo Giovanni Vecchio. All rights reserved.
+          <a
+            href="/privacy"
+            class=" ml-3 text-sm text-muted-foreground hover:text-primary transition-colors underline"
+          >
+            Privacy Policy
+          </a>
         </p>
-        <a
-          href="/privacy"
-          class="text-sm text-muted-foreground hover:text-primary transition-colors underline"
-        >
-          Privacy Policy
-        </a>
 
         <div class="flex items-center gap-4">
           <a
