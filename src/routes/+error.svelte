@@ -2,7 +2,7 @@
   import { page } from "$app/state";
 </script>
 
-<div class="max-w-4xl mx-auto px-6 w-full flex flex-col content-center justify-center min-h-screen">
+<main class="max-w-4xl mx-auto px-6 w-full flex flex-col content-center justify-center min-h-screen">
   <div class="text-center">
     <h1 class="mb-4 text-4xl font-bold">{page.status}</h1>
     {#if page.status === 404}
@@ -20,4 +20,4 @@
       Go home and let's pretend this didn't happen
     </a>
   </div>
-</div>
+</main>
