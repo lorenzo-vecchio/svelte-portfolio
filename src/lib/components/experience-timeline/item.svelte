@@ -19,9 +19,9 @@
   <!-- Timeline dot -->
   <div class="absolute left-0 md:left-8 top-6 w-7 h-7 -translate-x-1/2 rounded-full bg-primary glow flex justify-center items-center">
     {#if exp.type === "education"}
-        <GraduationCap class="text-accent-foreground" strokeWidth={1.5} />
+        <GraduationCap class="text-white" strokeWidth={1.5} />
       {:else if exp.type === "work"}
-        <BriefcaseBusiness class="text-accent-foreground m-1" strokeWidth={1.5} />
+        <BriefcaseBusiness class="text-white m-1" strokeWidth={1.5} />
     {/if}
   </div>
 
