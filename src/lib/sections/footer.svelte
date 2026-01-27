@@ -11,7 +11,7 @@
         </p>
         <a
           href="/privacy"
-          class="text-sm text-muted-foreground hover:text-primary transition-colors underline ml-2"
+          class="text-sm text-muted-foreground hover:text-primary transition-colors underline"
         >
           Privacy Policy
         </a>
