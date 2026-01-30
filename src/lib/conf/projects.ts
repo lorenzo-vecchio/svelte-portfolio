@@ -10,6 +10,13 @@ export interface Project {
 
 export const projects: Project[] = [
     {
+        title: "endpoint-fetcher",
+        description: "A type-safe API client builder for TypeScript using the Fetch API. Features dynamic paths, custom handlers, and full type inference for inputs and outputs.",
+        technologies: ["TypeScript", "Fetch API", "npm"],
+        liveUrl: "https://www.npmjs.com/package/endpoint-fetcher",
+        githubUrl: "https://github.com/lorenzo-vecchio/endpoint-fetcher",
+    },
+    {
         title: "Personal Portfolio Website (this site)",
         description: "My personal portfolio website built with SvelteKit and ShadcnUI to showcase my skills, projects and experience.",
         technologies: ["SvelteKit", "Tailwind CSS", "TypeScript", "ShadcnUI", "Docker", "Nginx"],
