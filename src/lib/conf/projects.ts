@@ -7,8 +7,6 @@ export interface Project {
   status: 'active' | 'upcoming' | 'abandoned';
 }
 
-// TODO: change upcoming and abandoned to status: 'upcoming' | 'active' | 'abandoned'
-
 export const projects: Project[] = [
     {
         title: "endpoint-fetcher",
