@@ -4,9 +4,10 @@ export interface Project {
   technologies: string[];
   liveUrl?: string;
   githubUrl?: string;
-  upcoming?: boolean;
-  abandoned?: boolean;
+  status: 'active' | 'upcoming' | 'abandoned';
 }
+
+// TODO: change upcoming and abandoned to status: 'upcoming' | 'active' | 'abandoned'
 
 export const projects: Project[] = [
     {
@@ -15,6 +16,7 @@ export const projects: Project[] = [
         technologies: ["TypeScript", "Fetch API", "npm"],
         liveUrl: "https://www.npmjs.com/package/endpoint-fetcher",
         githubUrl: "https://github.com/lorenzo-vecchio/endpoint-fetcher",
+        status: 'active',
     },
     {
         title: "Personal Portfolio Website (this site)",
@@ -22,6 +24,7 @@ export const projects: Project[] = [
         technologies: ["SvelteKit", "Tailwind CSS", "TypeScript", "ShadcnUI", "Docker", "Nginx"],
         liveUrl: "https://lorenzovecchio.dev",
         githubUrl: "https://github.com/lorenzo-vecchio/svelte-portfolio",
+        status: 'active',
     },
     {
         title: "Old Portfolio Website",
@@ -29,6 +32,6 @@ export const projects: Project[] = [
         technologies: ["HTML", "CSS", "JavaScript", "jQuery"],
         liveUrl: "https://old.lorenzovecchio.dev",
         githubUrl: "https://github.com/lorenzo-vecchio/old-personal-website",
-        abandoned: true,
+        status: 'abandoned',
     }
 ];

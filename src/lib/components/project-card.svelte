@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { Project } from "$lib/conf";
-  import { Clock, ExternalLink, Github } from "@lucide/svelte";
+  import { Clock, ExternalLink, Github, Zap } from "@lucide/svelte";
   import { Badge } from "./ui/badge";
   import { Button } from "./ui/button";
   import {
@@ -26,7 +26,15 @@
       <CardHeader>
         <div class="flex items-center justify-between gap-2">
           <CardTitle class="text-xl">{project.title}</CardTitle>
-          {#if project.upcoming}
+          {#if project.status === "active"}
+            <Badge
+              variant="outline"
+              class="text-xs border-green-500/50 text-green-500"
+            >
+              <Zap class="w-3 h-3 mr-1" />
+              Active
+            </Badge>
+          {:else if project.status === "upcoming"}
             <Badge
               variant="outline"
               class="text-xs border-primary/50 text-primary"
@@ -34,8 +42,7 @@
               <Clock class="w-3 h-3 mr-1" />
               Upcoming
             </Badge>
-          {/if}
-          {#if project.abandoned}
+          {:else if project.status === "abandoned"}
             <Badge
               variant="outline"
               class="text-xs border-red-400/50 text-red-400"
