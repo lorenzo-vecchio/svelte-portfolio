@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { Project } from "$lib/conf";
-  import { Clock, ExternalLink, Github, Zap } from "@lucide/svelte";
+  import { Book, Clock, ExternalLink, Github, Zap } from "@lucide/svelte";
   import { Badge } from "./ui/badge";
   import { Button } from "./ui/button";
   import {
@@ -85,6 +85,19 @@
             >
               <Github class="w-4 h-4 mr-1" />
               Source
+            </Button>
+          {/if}
+
+          {#if project.docsUrl}
+            <Button
+              size="sm"
+              variant="ghost"
+              href={project.docsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Book class="w-4 h-4 mr-1" />
+              Docs
             </Button>
           {/if}
         </div>
