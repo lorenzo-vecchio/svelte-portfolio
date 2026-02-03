@@ -10,6 +10,12 @@ export interface Project {
 
 export const projects: Project[] = [
     {
+        title: "@endpoint-fetcher/cache",
+        description: "Caching plugin for endpoint-fetcher with type-safe wrapper support.",
+        technologies: ["TypeScript", "Fetch API", "npm"],
+        status: 'upcoming',
+    },
+    {
         title: "endpoint-fetcher",
         description: "A type-safe API client builder for TypeScript using the Fetch API. Features dynamic paths, custom handlers, and full type inference for inputs and outputs.",
         technologies: ["TypeScript", "Fetch API", "npm"],
