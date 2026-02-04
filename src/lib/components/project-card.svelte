@@ -42,12 +42,12 @@
               <Clock class="w-3 h-3 mr-1" />
               Upcoming
             </Badge>
-          {:else if project.status === "abandoned"}
+          {:else if project.status === "legacy"}
             <Badge
               variant="outline"
               class="text-xs border-red-400/50 text-red-400"
             >
-              Abandoned
+              Legacy
             </Badge>
           {/if}
         </div>

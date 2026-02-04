@@ -5,7 +5,7 @@ export interface Project {
   liveUrl?: string;
   githubUrl?: string;
   docsUrl?: string;
-  status: 'active' | 'upcoming' | 'abandoned';
+  status: 'active' | 'upcoming' | 'legacy';
 }
 
 export const projects: Project[] = [
@@ -13,6 +13,8 @@ export const projects: Project[] = [
         title: "@endpoint-fetcher/cache",
         description: "Caching plugin for endpoint-fetcher with type-safe wrapper support.",
         technologies: ["TypeScript", "Fetch API", "npm"],
+        liveUrl: "https://www.npmjs.com/package/@endpoint-fetcher/cache",
+        githubUrl: "https://github.com/lorenzo-vecchio/endpoint-fetcher-cache",
         status: 'upcoming',
     },
     {
@@ -38,6 +40,6 @@ export const projects: Project[] = [
         technologies: ["HTML", "CSS", "JavaScript", "jQuery"],
         liveUrl: "https://old.lorenzovecchio.dev",
         githubUrl: "https://github.com/lorenzo-vecchio/old-personal-website",
-        status: 'abandoned',
+        status: 'legacy',
     }
 ];
