@@ -27,7 +27,7 @@ export const projects: Project[] = [
         status: 'active',
     },
     {
-        title: "Personal Portfolio Website (this site)",
+        title: "Personal Portfolio (this website)",
         description: "My personal portfolio website built with SvelteKit and ShadcnUI to showcase my skills, projects and experience.",
         technologies: ["SvelteKit", "Tailwind CSS", "TypeScript", "ShadcnUI", "Docker", "Nginx"],
         liveUrl: "https://lorenzovecchio.dev",
