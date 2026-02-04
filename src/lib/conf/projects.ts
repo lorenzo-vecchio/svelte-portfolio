@@ -15,7 +15,7 @@ export const projects: Project[] = [
         technologies: ["TypeScript", "Fetch API", "npm"],
         liveUrl: "https://www.npmjs.com/package/@endpoint-fetcher/cache",
         githubUrl: "https://github.com/lorenzo-vecchio/endpoint-fetcher-cache",
-        status: 'upcoming',
+        status: 'active',
     },
     {
         title: "endpoint-fetcher",
