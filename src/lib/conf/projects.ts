@@ -23,7 +23,7 @@ export const projects: Project[] = [
         technologies: ["TypeScript", "Fetch API", "npm"],
         liveUrl: "https://www.npmjs.com/package/endpoint-fetcher",
         githubUrl: "https://github.com/lorenzo-vecchio/endpoint-fetcher",
-        docsUrl: "https://docs.lorenzovecchio.dev/share/pzem9jer09/p/endpoint-fetcher-DxuIlS6pPl",
+        docsUrl: "https://endpoint-fetcher.lorenzovecchio.dev",
         status: 'active',
     },
     {
