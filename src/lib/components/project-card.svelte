@@ -61,7 +61,7 @@
             </Badge>
           {/each}
         </div>
-        <div class="flex gap-3">
+        <div class="flex flex-wrap gap-3">
           {#if project.liveUrl}
             <Button
               size="sm"

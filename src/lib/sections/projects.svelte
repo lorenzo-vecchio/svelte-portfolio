@@ -1,6 +1,7 @@
 <script>
   import ProjectCard from "$lib/components/project-card.svelte";
-  import { projects } from "$lib/conf";
+  import ProjectGroupStack from "$lib/components/project-group-stack.svelte";
+  import { projectsEntries, isGroup } from "$lib/conf";
 </script>
 
 <section id="projects" class="py-20 px-6 bg-secondary/30">
@@ -13,8 +14,12 @@
     </p>
 
     <div class="grid gap-6">
-      {#each projects as project, index}
-        <ProjectCard {project} />
+      {#each projectsEntries as entry, index}
+        {#if isGroup(entry)}
+          <ProjectGroupStack group={entry} {index} />
+          {:else}
+          <ProjectCard project={entry} />
+        {/if}
       {/each}
     </div>
   </div>
