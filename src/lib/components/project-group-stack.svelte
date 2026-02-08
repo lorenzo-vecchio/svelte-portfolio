@@ -70,7 +70,7 @@
           <CardTitle class="text-xl">{group.groupTitle}</CardTitle>
         </div>
         <Badge variant="outline" class="text-xs border-primary/50 text-primary">
-          {group.projects.length} progetti
+          {group.projects.length} projects
         </Badge>
       </div>
       <CardDescription>{group.groupDescription}</CardDescription>
