@@ -1,17 +1,17 @@
 <script lang="ts">
   import ProjectCard from "$lib/components/project-card.svelte";
-  import type { ProjectGroup } from "$lib/conf";
+  import { Badge } from "$lib/components/ui/badge";
   import {
     Card,
+    CardContent,
+    CardDescription,
     CardHeader,
     CardTitle,
-    CardDescription,
-    CardContent,
   } from "$lib/components/ui/card";
-  import { Badge } from "$lib/components/ui/badge";
-  import { Package, X } from "@lucide/svelte";
   import * as Dialog from "$lib/components/ui/dialog";
-  import { ScrollArea, ScrollAreaScrollbar } from "./ui/scroll-area";
+  import type { ProjectGroup } from "$lib/conf";
+  import { Package } from "@lucide/svelte";
+  import { ScrollArea } from "./ui/scroll-area";
 
   interface Props {
     index: number;
