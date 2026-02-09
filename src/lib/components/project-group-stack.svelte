@@ -45,7 +45,7 @@
   <!-- Stacked layers behind — each one offset down -->
   {#if stackCount >= 4}
     <Card
-      class="absolute inset-x-5 top-[30px] h-[calc(100%-30px)] opacity-20 border-border/40 transition-all duration-300 group-hover:inset-x-4 group-hover:top-[34px]"
+      class="absolute inset-x-5 top-7.5 h-[calc(100%-30px)] opacity-20 border-border/40 transition-all duration-300 group-hover:inset-x-4 group-hover:top-8.5"
     />
   {/if}
   {#if stackCount >= 3}
