@@ -59,6 +59,12 @@
     />
   {/if}
 
+  <span
+    class="absolute -top-6 inset-x-0 text-xs text-muted-foreground text-center"
+  >
+    ↓ Click to expand ↓
+  </span>
+
   <!-- Front card -->
   <Card
     class="relative card-shadow border-border hover:border-primary/50 transition-all duration-300 group-hover:-translate-y-0.5"
@@ -95,9 +101,7 @@
 
   <Dialog.Content class="max-w-3xl max-h-[90vh] p-0 flex flex-col">
     <!-- Header -->
-    <div
-      class="rounded-t-lg border-b border-border bg-card px-6 py-5"
-    >
+    <div class="rounded-t-lg border-b border-border bg-card px-6 py-5">
       <div class="flex items-center gap-2 mb-1.5">
         <Package class="w-5 h-5 text-primary" />
         <Dialog.Title class="text-2xl font-semibold"
@@ -124,12 +128,11 @@
     <!-- Project list -->
 
     <ScrollArea class="flex-1 size-full overflow-y-auto">
-        <div class="flex flex-col gap-4 p-7">
+      <div class="flex flex-col gap-4 p-7">
         {#each group.projects as project}
           <ProjectCard {project} />
         {/each}
-        </div>
+      </div>
     </ScrollArea>
-    
   </Dialog.Content>
 </Dialog.Root>
