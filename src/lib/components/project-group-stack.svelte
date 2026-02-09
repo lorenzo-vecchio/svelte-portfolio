@@ -22,8 +22,8 @@
 
   let isOpen = $state(false);
 
-  const stackCount = $derived(Math.min(group.projects.length, 4));
-  const paddingBottom = $derived(`${Math.min(stackCount - 1, 3) * 10}px`);
+  const stackCount = $derived(group.projects.length);
+  const paddingBottom = $derived(`${Math.min(stackCount - 1, 3) * 5}px`);
   const animationDelay = $derived(`${index * 0.1}s`);
 
   function handleBackdropClick(e: MouseEvent) {
@@ -38,24 +38,19 @@
 <!-- Stack button -->
 <button
   onclick={() => (isOpen = true)}
-  class="relative w-full text-left group animate-fade-in cursor-pointer"
+  class="relative w-full text-left group animate-fade-in cursor-pointer mt-4 mb-4"
   style:animation-delay={animationDelay}
   style:padding-bottom={paddingBottom}
 >
   <!-- Stacked layers behind — each one offset down -->
-  {#if stackCount >= 4}
-    <Card
-      class="absolute inset-x-5 top-7.5 h-[calc(100%-30px)] opacity-20 border-border/40 transition-all duration-300 group-hover:inset-x-4 group-hover:top-8.5"
-    />
-  {/if}
   {#if stackCount >= 3}
     <Card
-      class="absolute inset-x-3.5 top-5 h-[calc(100%-20px)] opacity-35 border-border/50 transition-all duration-300 group-hover:inset-x-2.5 group-hover:top-6"
+      class="absolute inset-x-3.5 top-8 h-[calc(100%-20px)] opacity-35 border-border/50 transition-all duration-300 group-hover:inset-x-2.5 group-hover:top-10"
     />
   {/if}
   {#if stackCount >= 2}
     <Card
-      class="absolute inset-x-2 top-2.5 h-[calc(100%-10px)] opacity-55 border-border/60 transition-all duration-300 group-hover:inset-x-1 group-hover:top-3.5"
+      class="absolute inset-x-2 top-2.5 h-[calc(100%-10px)] opacity-55 border-border/60 transition-all duration-300 group-hover:inset-x-1 group-hover:top-3"
     />
   {/if}
 
@@ -67,7 +62,7 @@
 
   <!-- Front card -->
   <Card
-    class="relative card-shadow border-border hover:border-primary/50 transition-all duration-300 group-hover:-translate-y-0.5"
+    class="relative card-shadow border-border hover:border-primary/50 transition-all duration-300 group-hover:-translate-y-0.5 transform group-hover:scale-[1.01]"
   >
     <CardHeader>
       <div class="flex items-center justify-between">

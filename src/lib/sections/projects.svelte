@@ -4,7 +4,7 @@
   import { projectsEntries, isGroup } from "$lib/conf";
 </script>
 
-<section id="projects" class="py-20 px-6">
+<section id="projects" class="py-20 px-6 bg-secondary/30">
   <div class="max-w-4xl mx-auto">
     <h2 class="text-3xl md:text-4xl font-bold mb-2 text-foreground">
       Projects
