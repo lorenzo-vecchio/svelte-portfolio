@@ -1,6 +1,6 @@
 # 🌐 Personal Website
 
-A high-performance, statically generated personal website built with the modern web stack. This site leverages **SvelteKit Runes** for reactive logic and **Tailwind CSS v4** for styling, all served via a hardened **NGINX** container.
+A high-performance, statically generated personal website built with a modern web stack. This site leverages **SvelteKit Runes** for reactive logic and **Tailwind CSS v4** for styling, all served via a hardened **NGINX** container.
 
 ## 🚀 Tech Stack
 
