@@ -15,7 +15,7 @@
       class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary border border-border mb-8 animate-fade-in"
     >
       <span class="w-2 h-2 rounded-full bg-primary animate-pulse-glow" />
-      <span class="text-sm text-muted-foreground">Open to opportunities</span>
+      <span class="text-sm text-muted-foreground">Ready to talk!</span>
     </div>
 
     <!-- Main heading -->
