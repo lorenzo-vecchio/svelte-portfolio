@@ -1,91 +1,68 @@
 <script>
   import { contacts } from "$lib/conf";
-
+  import * as m from "$lib/paraglide/messages";
 </script>
+
 <main class="min-h-screen mt-20 px-6 py-20 mx-auto prose md:prose-lg prose-gray dark:prose-invert max-w-4xl">
-  <h1>Privacy Policy</h1>
-  <p class="last-updated">Last Updated: January 27, 2026</p>
+  <h1>{m.privacy_title()}</h1>
+  <p class="last-updated">{m.privacy_last_updated()}</p>
 
-  <p>
-    I value your privacy as much as I value my own. This website (<a
-      href="https://lorenzovecchio.dev">lorenzovecchio.dev</a
-    >) is built to be a fast, clean, and privacy-respecting space.
-  </p>
+  <p>{m.privacy_intro()}</p>
 
   <section>
-    <h2>1. No Cookies</h2>
+    <h2>{m.privacy_h1()}</h2>
     <p>
-      This website <strong>does not use cookies</strong>. I do not use any
-      tracking pixels, advertising beacons, or any other technology that stores
-      information on your device or tracks you across the web.
+      {m.privacy_no_cookies()}
     </p>
   </section>
 
   <section>
-    <h2>2. Privacy-First Analytics</h2>
+    <h2>{m.privacy_h2()}</h2>
     <p>
-      I use <strong>Umami Analytics</strong> to understand how visitors interact
-      with my site (e.g., which projects are the most popular). Umami is a privacy-focused,
-      open-source alternative to Google Analytics.
+      {m.privacy_analytics_intro()}
     </p>
     <ul>
       <li>
-        <strong>No Personal Data:</strong> Umami does not collect any personally
-        identifiable information (PII).
+        <strong>{m.privacy_analytics_li1_title()}</strong> {m.privacy_analytics_li1_body()}
       </li>
       <li>
-        <strong>Anonymization:</strong> Your IP address is never stored. It is used
-        only to determine general geographic data (like country) and is then immediately
-        discarded.
+        <strong>{m.privacy_analytics_li2_title()}</strong> {m.privacy_analytics_li2_body()}
       </li>
       <li>
-        <strong>No Tracking:</strong> You are not tracked across different websites
-        or devices.
+        <strong>{m.privacy_analytics_li3_title()}</strong> {m.privacy_analytics_li3_body()}
       </li>
     </ul>
   </section>
 
   <section>
-    <h2>3. Data Usage & Sharing</h2>
+    <h2>{m.privacy_h3()}</h2>
     <p>
-      Any data collected is used strictly for the purpose of improving this
-      website and understanding its reach.
+      {m.privacy_data_intro()}
     </p>
     <ul>
-      <li>I <strong>do not sell</strong> your data.</li>
-      <li>
-        I <strong>do not share</strong> your data with third parties for marketing
-        or advertising purposes.
-      </li>
+      <li>{m.privacy_data_li1()}</li>
+      <li>{m.privacy_data_li2()}</li>
     </ul>
   </section>
 
   <section>
-    <h2>4. Legal Basis (GDPR)</h2>
+    <h2>{m.privacy_h4()}</h2>
     <p>
-      The processing of anonymous analytical data is based on <strong
-        >Legitimate Interest</strong
-      > (Article 6(1)(f) of the GDPR). This allows me to improve the website's performance
-      and content without impacting your fundamental rights and freedoms, as no personal
-      data is processed.
+      {m.privacy_gdpr()}
     </p>
   </section>
 
   <section>
-    <h2>5. Your Rights</h2>
+    <h2>{m.privacy_h5()}</h2>
     <p>
-      Even though I do not collect personal data that could identify you, you
-      still have the right to inquire about my data practices. Since no
-      individual identifiers are stored, I cannot "delete" or "export" your
-      specific data because I have no way of knowing which data belongs to you.
+      {m.privacy_rights()}
     </p>
   </section>
 
   <section>
-    <h2>6. Contact</h2>
+    <h2>{m.privacy_h6()}</h2>
     <p>
-      If you have any questions about this policy or the privacy of this site,
-      feel free to reach out:
+      {m.privacy_contact_intro()}
     </p>
     <p>
       <strong>Lorenzo Vecchio</strong><br />

@@ -3,6 +3,7 @@
   import { Button } from "$lib/components/ui/button";
   import { contacts } from "$lib/conf";
   import { ChevronDown, Github, Linkedin, Mail, MapPin } from "@lucide/svelte";
+  import * as m from "$lib/paraglide/messages";
 </script>
 
 <section
@@ -15,7 +16,7 @@
       class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary border border-border mb-8 animate-fade-in"
     >
       <span class="w-2 h-2 rounded-full bg-primary animate-pulse-glow" />
-      <span class="text-sm text-muted-foreground">Ready to talk!</span>
+      <span class="text-sm text-muted-foreground">{m.hero_status()}</span>
     </div>
 
     <!-- Main heading -->
@@ -23,7 +24,7 @@
       class="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 animate-fade-in text-foreground"
       style="animation-delay: 0.1s"
     >
-      <span class="text-foreground/80">Hi, I'm</span>{" "}
+      <span class="text-foreground/80">{m.hero_greeting()}</span>{" "}
       <AuroraText>Lorenzo Giovanni Vecchio</AuroraText>
     </h1>
 
@@ -32,8 +33,7 @@
       class="text-xl md:text-2xl text-muted-foreground max-w-2xl mb-8 animate-fade-in"
       style="animation-delay: 0.2s"
     >
-      Software Developer passionate about building robust full-stack
-      applications and architecting scalable solutions.
+      {m.hero_subtitle()}
     </p>
 
     <!-- Info row -->
@@ -43,7 +43,7 @@
     >
       <div class="flex items-center gap-2 text-muted-foreground">
         <MapPin class="w-4 h-4 text-primary" />
-        <span>Milan, Italy</span>
+        <span>{m.hero_location()}</span>
       </div>
       <div class="flex items-center gap-2 text-muted-foreground">
         <span
@@ -61,7 +61,7 @@
     >
       <Button size="lg" href="#contact" class="flex flex-row">
         <Mail class="w-4 h-4 mr-2" />
-        Get in touch
+        {m.hero_cta_contact()}
       </Button>
       <Button
         variant="outline"
