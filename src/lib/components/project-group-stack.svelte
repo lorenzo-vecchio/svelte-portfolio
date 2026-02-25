@@ -93,7 +93,7 @@
           {group.projects.length} projects
         </Badge>
       </div>
-      <CardDescription>{group.groupDescription}</CardDescription>
+      <CardDescription class='text-justify'>{group.groupDescription}</CardDescription>
     </CardHeader>
     {#if group.groupTechnologies}
       <CardContent>
@@ -124,7 +124,7 @@
             {group.projects.length} progetti
           </Badge>
         </div>
-        <Dialog.Description class="text-sm text-muted-foreground">
+        <Dialog.Description class="text-sm text-muted-foreground text-justify">
           {group.groupDescription}
         </Dialog.Description>
         {#if group.groupTechnologies}
@@ -162,7 +162,7 @@
             {group.projects.length} progetti
           </Badge>
         </div>
-        <Drawer.Description class="text-sm text-muted-foreground">
+        <Drawer.Description class="text-sm text-muted-foreground text-justify">
           {group.groupDescription}
         </Drawer.Description>
         {#if group.groupTechnologies}

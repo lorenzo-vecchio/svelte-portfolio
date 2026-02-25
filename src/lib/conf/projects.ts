@@ -21,9 +21,14 @@ export function isGroup(entry: ProjectEntry): entry is ProjectGroup {
     return "projects" in entry;
 }
 
-// TODO: use drawer on mobile
-
 export const projectsEntries: ProjectEntry[] = [
+    {
+        title: 'digit-recognizer',
+        description: 'A fully hand-rolled multilayer perceptron written in Go, with zero ML dependencies. Implements every component from scratch: forward and backward passes, ReLU and Softmax activations, cross-entropy loss, He weight initialisation, and mini-batch SGD. Trained on 60,000 MNIST images, it reaches 97.4% accuracy on the 10,000-image test set. The source code is intentionally written as a learning artifact — every concept (backprop, the chain rule, overfitting, normalisation) is explained in plain English directly in comments, making the codebase a readable reference for programmers new to machine learning.',
+        technologies: ['Go', 'Machine Learning', 'Neural Networks'],
+        githubUrl: 'https://github.com/lorenzo-vecchio/digit-recognizer',
+        status: 'active'
+    },
     {
         groupTitle: "endpoint-fetcher",
         groupDescription: "A collection of libraries for building type-safe API clients in TypeScript using the Fetch API, including a core client builder and several plugins.",

@@ -51,7 +51,7 @@
             </Badge>
           {/if}
         </div>
-        <CardDescription>{project.description}</CardDescription>
+        <CardDescription class='text-justify'>{project.description}</CardDescription>
       </CardHeader>
       <CardContent>
         <div class="flex flex-wrap gap-2 mb-4 mt-4">
