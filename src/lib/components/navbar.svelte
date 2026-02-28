@@ -4,8 +4,7 @@
   import { Menu, X } from "@lucide/svelte";
   import { onMount } from "svelte";
   import ThemeButton from "./theme-button.svelte";
-  import { locales, localizeHref, getLocale } from "$lib/paraglide/runtime";
-  import { page } from "$app/state";
+  import LanguageSwitcher from "./language-switcher.svelte";
 
   let isScrolled = $state(false);
   let isMobileMenuOpen = $state(false);
@@ -51,22 +50,7 @@
         </Button>
       {/each}
       <!-- Language switcher -->
-      <div class="flex items-center gap-1 ml-1 border-l border-border pl-2">
-        {#each locales as locale}
-          <a
-            href={localizeHref(page.url.pathname, { locale })}
-            data-sveltekit-reload
-            class={[
-              "px-2 py-1 text-xs font-semibold rounded uppercase transition-colors",
-              getLocale() === locale
-                ? "bg-primary text-primary-foreground"
-                : "text-muted-foreground hover:text-foreground",
-            ]}
-          >
-            {locale}
-          </a>
-        {/each}
-      </div>
+      <LanguageSwitcher class="ml-1 border-l border-border pl-2 mr-2" />
       <ThemeButton />
     </div>
 
@@ -101,23 +85,7 @@
           </a>
         {/each}
         <!-- Mobile language switcher -->
-        <div class="flex items-center gap-3 pt-4">
-          {#each locales as locale}
-            <a
-              href={localizeHref(page.url.pathname, { locale })}
-              data-sveltekit-reload
-              onclick={() => (isMobileMenuOpen = false)}
-              class={[
-                "px-3 py-1 text-sm font-semibold rounded uppercase transition-colors",
-                getLocale() === locale
-                  ? "bg-primary text-primary-foreground"
-                  : "text-muted-foreground hover:text-foreground",
-              ]}
-            >
-              {locale}
-            </a>
-          {/each}
-        </div>
+        <LanguageSwitcher class="pt-4 gap-3" onswitch={() => (isMobileMenuOpen = false)} />
       </div>
       <ThemeButton />
     </div>
