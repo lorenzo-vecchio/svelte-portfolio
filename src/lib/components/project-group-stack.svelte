@@ -14,6 +14,7 @@
   import { Package } from "@lucide/svelte";
   import { onMount } from "svelte";
   import { ScrollArea } from "./ui/scroll-area";
+  import * as m from "$lib/paraglide/messages";
 
   interface Props {
     index: number;
@@ -31,27 +32,22 @@
 
   onMount(() => {
     const mediaQuery = window.matchMedia("(min-width: 768px)");
-    
+
     // Set initial value
     isDesktop = mediaQuery.matches;
-    
+
     // Listen for changes
     const handler = (e: MediaQueryListEvent) => {
       isDesktop = e.matches;
     };
-    
+
     mediaQuery.addEventListener("change", handler);
-    
+
     return () => {
       mediaQuery.removeEventListener("change", handler);
     };
   });
 
-  function handleBackdropClick(e: MouseEvent) {
-    if (e.target === e.currentTarget) {
-      isOpen = false;
-    }
-  }
 </script>
 
 <!-- Stack button -->
@@ -76,7 +72,7 @@
   <span
     class="absolute -top-6 inset-x-0 text-xs text-muted-foreground text-center"
   >
-    ↓ Click to expand ↓
+    {m.project_group_expand()}
   </span>
 
   <!-- Front card -->
@@ -90,7 +86,7 @@
           <CardTitle class="text-xl">{group.groupTitle}</CardTitle>
         </div>
         <Badge variant="outline" class="text-xs border-primary/50 text-primary">
-          {group.projects.length} projects
+          {m.project_group_count({ count: group.projects.length })}
         </Badge>
       </div>
       <CardDescription class='text-justify'>{group.groupDescription}</CardDescription>
@@ -121,7 +117,7 @@
             >{group.groupTitle}</Dialog.Title
           >
           <Badge variant="outline" class="text-xs border-primary/50 text-primary">
-            {group.projects.length} progetti
+            {m.project_group_count({ count: group.projects.length })}
           </Badge>
         </div>
         <Dialog.Description class="text-sm text-muted-foreground text-justify">
@@ -159,7 +155,7 @@
             >{group.groupTitle}</Drawer.Title
           >
           <Badge variant="outline" class="text-xs border-primary/50 text-primary">
-            {group.projects.length} progetti
+            {m.project_group_count({ count: group.projects.length })}
           </Badge>
         </div>
         <Drawer.Description class="text-sm text-muted-foreground text-justify">

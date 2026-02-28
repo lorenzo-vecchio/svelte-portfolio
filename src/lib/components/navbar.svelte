@@ -1,14 +1,16 @@
 <script lang="ts">
   import { Button } from "$lib/components/ui/button";
-  import { navItems } from "$lib/conf";
-  import Footer from "$lib/sections/footer.svelte";
+  import { getNavItems } from "$lib/conf";
   import { Menu, X } from "@lucide/svelte";
   import { onMount } from "svelte";
   import ThemeButton from "./theme-button.svelte";
+  import LanguageSwitcher from "./language-switcher.svelte";
 
   let isScrolled = $state(false);
   let isMobileMenuOpen = $state(false);
   let outerHeight = $state(0);
+
+  const navItems = $derived(getNavItems());
 
   onMount(() => {
     const handleScroll = () => {
@@ -47,6 +49,8 @@
           {item.label}
         </Button>
       {/each}
+      <!-- Language switcher -->
+      <LanguageSwitcher class="ml-1 border-l border-border pl-2 mr-2" />
       <ThemeButton />
     </div>
 
@@ -63,7 +67,7 @@
   </button>
   </div>
 
-  
+
 
   <!-- Mobile Menu -->
   {#if isMobileMenuOpen}
@@ -80,6 +84,8 @@
             {item.label}
           </a>
         {/each}
+        <!-- Mobile language switcher -->
+        <LanguageSwitcher class="pt-4 gap-3" onswitch={() => (isMobileMenuOpen = false)} />
       </div>
       <ThemeButton />
     </div>

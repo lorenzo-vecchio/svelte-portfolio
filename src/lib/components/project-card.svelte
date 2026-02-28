@@ -10,6 +10,7 @@
     CardHeader,
     CardTitle,
   } from "./ui/card";
+  import * as m from "$lib/paraglide/messages";
 
   interface Props {
     project: Project;
@@ -32,7 +33,7 @@
               class="text-xs border-green-500/50 text-green-500"
             >
               <Zap class="w-3 h-3 mr-1" />
-              Active
+              {m.project_status_active()}
             </Badge>
           {:else if project.status === "upcoming"}
             <Badge
@@ -40,14 +41,14 @@
               class="text-xs border-primary/50 text-primary"
             >
               <Clock class="w-3 h-3 mr-1" />
-              Upcoming
+              {m.project_status_upcoming()}
             </Badge>
           {:else if project.status === "legacy"}
             <Badge
               variant="outline"
               class="text-xs border-red-400/50 text-red-400"
             >
-              Legacy
+              {m.project_status_legacy()}
             </Badge>
           {/if}
         </div>
@@ -71,7 +72,7 @@
               rel="noopener noreferrer"
             >
               <ExternalLink class="w-4 h-4 mr-1" />
-              Live Demo
+              {m.project_btn_live_demo()}
             </Button>
           {/if}
 
@@ -84,7 +85,7 @@
               rel="noopener noreferrer"
             >
               <Github class="w-4 h-4 mr-1" />
-              Source
+              {m.project_btn_source()}
             </Button>
           {/if}
 
@@ -97,7 +98,7 @@
               rel="noopener noreferrer"
             >
               <Book class="w-4 h-4 mr-1" />
-              Docs
+              {m.project_btn_docs()}
             </Button>
           {/if}
         </div>

@@ -3,16 +3,16 @@
   import { Card, CardContent } from "$lib/components/ui/card";
   import { contacts } from "$lib/conf";
   import { Linkedin, Mail, MapPin } from "@lucide/svelte";
+  import * as m from "$lib/paraglide/messages";
 </script>
 
 <section id="contact" class="py-20 px-6 bg-secondary/30">
   <div class="max-w-4xl mx-auto text-center">
     <h2 class="text-3xl md:text-4xl font-bold mb-2 text-foreground">
-      Let's Connect
+      {m.contact_title()}
     </h2>
     <p class="text-muted-foreground mb-12 max-w-xl mx-auto">
-      I'm always open to discussing new opportunities, projects, or just having
-      a chat about technology.
+      {m.contact_subtitle()}
     </p>
 
     <Card class="card-shadow max-w-md mx-auto animate-fade-in">
@@ -21,7 +21,7 @@
           class="flex items-center justify-center gap-3 text-muted-foreground"
         >
           <MapPin class="w-5 h-5 text-primary" />
-          <span>Milan, Italy</span>
+          <span>{m.contact_location()}</span>
         </div>
 
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
@@ -31,7 +31,7 @@
             class="flex flex-row"
           >
             <Mail class="w-4 h-4 mr-2" />
-            Email Me
+            {m.contact_btn_email()}
           </Button>
           <Button
             variant="outline"

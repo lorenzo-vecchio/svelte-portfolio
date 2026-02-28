@@ -1,22 +1,22 @@
-import { navItems } from './navbar';
-import { experiences } from './experience';
+import { getNavItems } from './navbar';
+import { getExperiences } from './experience';
 import type { ExperienceItem } from './experience';
-import { skillCategories } from './skill';
+import { getSkillCategories } from './skill';
 import type { Skill, SkillCategory } from './skill';
 import { contacts } from './contacts';
-import { projectsEntries, isGroup, type Project, type ProjectEntry, type ProjectGroup } from './projects';
+import { getProjectsEntries, isGroup, type Project, type ProjectEntry, type ProjectGroup } from './projects';
 
 export {
-    navItems,
-    experiences,
-    skillCategories,
-    contacts,
-    projectsEntries,
-    isGroup,
-    type ExperienceItem,
-    type Skill,
-    type SkillCategory,
-    type Project,
-    type ProjectEntry,
-    type ProjectGroup
+	getNavItems,
+	getExperiences,
+	getSkillCategories,
+	contacts,
+	getProjectsEntries,
+	isGroup,
+	type ExperienceItem,
+	type Skill,
+	type SkillCategory,
+	type Project,
+	type ProjectEntry,
+	type ProjectGroup
 };

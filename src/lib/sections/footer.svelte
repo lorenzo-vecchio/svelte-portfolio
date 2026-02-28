@@ -1,18 +1,20 @@
 <script>
   import { contacts } from "$lib/conf";
   import { Github, Linkedin, Mail } from "@lucide/svelte";
+  import * as m from "$lib/paraglide/messages";
+  import { localizeHref } from "$lib/paraglide/runtime";
 
   let year = new Date().getFullYear();
 </script>
 <footer class="py-8 px-6 border-t border-border">
       <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
         <p class="text-sm text-muted-foreground flex flex-col md:flex-row items-center">
-          © {year} Lorenzo Giovanni Vecchio. All rights reserved.
+          © {year} Lorenzo Giovanni Vecchio. {m.footer_rights()}
           <a
-            href="/privacy"
+            href={localizeHref("/privacy")}
             class=" ml-3 text-sm text-muted-foreground hover:text-primary transition-colors underline"
           >
-            Privacy Policy
+            {m.footer_privacy()}
           </a>
         </p>
 

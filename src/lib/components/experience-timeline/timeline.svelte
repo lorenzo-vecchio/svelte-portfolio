@@ -1,6 +1,8 @@
 <script>
-  import { experiences } from "$lib/conf";
+  import { getExperiences } from "$lib/conf";
   import Item from "./item.svelte";
+
+  const experiences = $derived(getExperiences());
 </script>
 
 <div class="relative">
