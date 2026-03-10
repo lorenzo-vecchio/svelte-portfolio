@@ -26,6 +26,13 @@ export function isGroup(entry: ProjectEntry): entry is ProjectGroup {
 export function getProjectsEntries(): ProjectEntry[] {
 	return [
 		{
+			title: 'quickbase',
+			description: m.project_quickbase_desc(),
+			technologies: ['Rust', 'SQLite', 'tokio', 'axum'],
+			githubUrl: 'https://github.com/lorenzo-vecchio/quickbase',
+			status: 'active'
+		},
+		{
 			title: 'digit-recognizer',
 			description: m.project_digit_recognizer_desc(),
 			technologies: ['Go', 'Machine Learning', 'Neural Networks'],
