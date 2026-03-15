@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { ExperienceItem } from "$lib/conf";
+  import { reveal } from "$lib/actions/reveal";
   import { Badge } from "$lib/components/ui/badge";
   import { Card, CardContent } from "$lib/components/ui/card";
   import { BriefcaseBusiness, CircleSmall, GraduationCap } from "@lucide/svelte";
@@ -13,8 +14,8 @@
 </script>
 
 <div
-  class="relative pl-8 md:pl-20 animate-fade-in"
-  style="animation-delay: {index * 0.1}s"
+  class="relative pl-8 md:pl-20"
+  use:reveal={{ delay: index * 120 }}
 >
   <!-- Timeline dot -->
   <div class="absolute left-0 md:left-8 top-6 w-7 h-7 -translate-x-1/2 rounded-full bg-primary glow flex justify-center items-center">

@@ -1,5 +1,6 @@
 <script lang="ts">
   import ProjectCard from "$lib/components/project-card.svelte";
+  import { reveal } from "$lib/actions/reveal";
   import { Badge } from "$lib/components/ui/badge";
   import {
     Card,
@@ -28,7 +29,6 @@
 
   const stackCount = $derived(group.projects.length);
   const paddingBottom = $derived(`${Math.min(stackCount - 1, 3) * 5}px`);
-  const animationDelay = $derived(`${index * 0.1}s`);
 
   onMount(() => {
     const mediaQuery = window.matchMedia("(min-width: 768px)");
@@ -53,8 +53,8 @@
 <!-- Stack button -->
 <button
   onclick={() => (isOpen = true)}
-  class="relative w-full text-left group animate-fade-in cursor-pointer mt-4 mb-4"
-  style:animation-delay={animationDelay}
+  class="relative w-full text-left group cursor-pointer mt-4 mb-4"
+  use:reveal={{ delay: index * 100 }}
   style:padding-bottom={paddingBottom}
 >
   <!-- Stacked layers behind -->

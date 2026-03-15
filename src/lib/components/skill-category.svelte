@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { SkillCategory } from "$lib/conf";
+  import { reveal } from "$lib/actions/reveal";
   import SkillCard from "./skill-card.svelte";
   import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 
@@ -11,9 +12,9 @@
   let { category, index }: Props = $props();
 </script>
 
+<div use:reveal={{ delay: index * 100 }}>
 <Card
-  class="card-shadow hover:border-primary/50 transition-colors animate-fade-in"
-  style="animation-delay: {index * 0.1}s"
+  class="card-shadow hover:border-primary/50 transition-colors"
 >
   <CardHeader class="pb-4">
     <CardTitle class="flex items-center gap-3 text-lg">
@@ -31,3 +32,4 @@
     </div>
   </CardContent>
 </Card>
+</div>

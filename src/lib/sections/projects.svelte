@@ -1,6 +1,7 @@
 <script>
   import ProjectCard from "$lib/components/project-card.svelte";
   import ProjectGroupStack from "$lib/components/project-group-stack.svelte";
+  import { reveal } from "$lib/actions/reveal";
   import { getProjectsEntries, isGroup } from "$lib/conf";
   import * as m from "$lib/paraglide/messages";
 
@@ -9,10 +10,10 @@
 
 <section id="projects" class="py-20 px-6 bg-secondary/30">
   <div class="max-w-4xl mx-auto">
-    <h2 class="text-3xl md:text-4xl font-bold mb-2 text-foreground">
+    <h2 use:reveal class="text-3xl md:text-4xl font-bold mb-2 text-foreground">
       {m.projects_title()}
     </h2>
-    <p class="text-muted-foreground mb-12">
+    <p use:reveal={{ delay: 100 }} class="text-muted-foreground mb-12">
       {m.projects_subtitle()}
     </p>
 
@@ -20,8 +21,10 @@
       {#each projectsEntries as entry, index}
         {#if isGroup(entry)}
           <ProjectGroupStack group={entry} {index} />
-          {:else}
-          <ProjectCard project={entry} />
+        {:else}
+          <div use:reveal={{ delay: index * 100 }}>
+            <ProjectCard project={entry} />
+          </div>
         {/if}
       {/each}
     </div>

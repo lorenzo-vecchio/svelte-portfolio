@@ -1,6 +1,7 @@
 <script>
   import { Button } from "$lib/components/ui/button";
   import { Card, CardContent } from "$lib/components/ui/card";
+  import { reveal } from "$lib/actions/reveal";
   import { contacts } from "$lib/conf";
   import { Linkedin, Mail, MapPin } from "@lucide/svelte";
   import * as m from "$lib/paraglide/messages";
@@ -8,14 +9,15 @@
 
 <section id="contact" class="py-20 px-6 bg-secondary/30">
   <div class="max-w-4xl mx-auto text-center">
-    <h2 class="text-3xl md:text-4xl font-bold mb-2 text-foreground">
+    <h2 use:reveal class="text-3xl md:text-4xl font-bold mb-2 text-foreground">
       {m.contact_title()}
     </h2>
-    <p class="text-muted-foreground mb-12 max-w-xl mx-auto">
+    <p use:reveal={{ delay: 100 }} class="text-muted-foreground mb-12 max-w-xl mx-auto">
       {m.contact_subtitle()}
     </p>
 
-    <Card class="card-shadow max-w-md mx-auto animate-fade-in">
+    <div use:reveal={{ delay: 200 }}>
+    <Card class="card-shadow max-w-md mx-auto">
       <CardContent class="p-8 space-y-6">
         <div
           class="flex items-center justify-center gap-3 text-muted-foreground"
@@ -47,5 +49,6 @@
         </div>
       </CardContent>
     </Card>
+    </div>
   </div>
 </section>
