@@ -22,6 +22,21 @@
     />
   {/each}
   <link rel="alternate" hreflang="x-default" href="https://lorenzovecchio.dev/" />
+
+  <!-- Open Graph (WhatsApp, Facebook, LinkedIn) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://lorenzovecchio.dev/" />
+  <meta property="og:title" content={m.meta_title()} />
+  <meta property="og:description" content={m.meta_description()} />
+  <meta property="og:image" content="https://lorenzovecchio.dev/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Lorenzo Giovanni Vecchio — Full Stack Developer" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="lorenzovecchio.dev" />
+
+  <!-- X/Twitter (only card type needed — falls back to OG for the rest) -->
+  <meta name="twitter:card" content="summary_large_image" />
 </svelte:head>
 
 <ModeWatcher />
