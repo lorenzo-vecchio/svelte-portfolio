@@ -26,6 +26,8 @@
 
 	"projects_title": "Projects",
 	"projects_subtitle": "A showcase of my personal projects",
+	"projects_view_all": "View all projects",
+	"projects_all_subtitle": "Complete list of all my personal projects",
 	"project_status_active": "Active",
 	"project_status_upcoming": "Upcoming",
 	"project_status_legacy": "Legacy",

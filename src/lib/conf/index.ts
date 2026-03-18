@@ -4,7 +4,7 @@ import type { ExperienceItem } from './experience';
 import { getSkillCategories } from './skill';
 import type { Skill, SkillCategory } from './skill';
 import { contacts } from './contacts';
-import { getProjectsEntries, isGroup, type Project, type ProjectEntry, type ProjectGroup } from './projects';
+import { getProjectsEntries, getShowcaseProjectsEntries, isGroup, type Project, type ProjectEntry, type ProjectGroup } from './projects';
 
 export {
 	getNavItems,
@@ -12,6 +12,7 @@ export {
 	getSkillCategories,
 	contacts,
 	getProjectsEntries,
+	getShowcaseProjectsEntries,
 	isGroup,
 	type ExperienceItem,
 	type Skill,

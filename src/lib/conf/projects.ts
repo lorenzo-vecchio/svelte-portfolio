@@ -8,6 +8,7 @@ export interface Project {
 	githubUrl?: string;
 	docsUrl?: string;
 	status: 'active' | 'upcoming' | 'legacy';
+	showcase?: boolean;
 }
 
 export interface ProjectGroup {
@@ -15,6 +16,7 @@ export interface ProjectGroup {
 	groupDescription: string;
 	groupTechnologies?: string[];
 	projects: Project[];
+	showcase?: boolean;
 }
 
 export type ProjectEntry = Project | ProjectGroup;
@@ -30,19 +32,22 @@ export function getProjectsEntries(): ProjectEntry[] {
 			description: m.project_quickbase_desc(),
 			technologies: ['Rust', 'SQLite', 'tokio', 'axum'],
 			githubUrl: 'https://github.com/lorenzo-vecchio/quickbase',
-			status: 'upcoming'
+			status: 'upcoming',
+			showcase: true,
 		},
 		{
 			title: 'digit-recognizer',
 			description: m.project_digit_recognizer_desc(),
 			technologies: ['Go', 'Machine Learning', 'Neural Networks'],
 			githubUrl: 'https://github.com/lorenzo-vecchio/digit-recognizer',
-			status: 'active'
+			status: 'active',
+			showcase: true,
 		},
 		{
 			groupTitle: 'endpoint-fetcher',
 			groupDescription: m.project_ef_group_desc(),
 			groupTechnologies: ['TypeScript', 'Fetch API', 'npm', 'Next.js', 'Nextra'],
+			showcase: true,
 			projects: [
 				{
 					title: 'endpoint-fetcher',
@@ -88,6 +93,7 @@ export function getProjectsEntries(): ProjectEntry[] {
 			liveUrl: 'https://lorenzovecchio.dev',
 			githubUrl: 'https://github.com/lorenzo-vecchio/svelte-portfolio',
 			status: 'active',
+			showcase: false,
 		},
 		{
 			title: m.project_old_portfolio_title(),
@@ -96,6 +102,11 @@ export function getProjectsEntries(): ProjectEntry[] {
 			liveUrl: 'https://old.lorenzovecchio.dev',
 			githubUrl: 'https://github.com/lorenzo-vecchio/old-personal-website',
 			status: 'legacy',
+			showcase: false,
 		}
 	];
+}
+
+export function getShowcaseProjectsEntries(): ProjectEntry[] {
+	return getProjectsEntries().filter((entry) => entry.showcase === true);
 }
