@@ -2,10 +2,13 @@
   import ProjectCard from "$lib/components/project-card.svelte";
   import ProjectGroupStack from "$lib/components/project-group-stack.svelte";
   import { reveal } from "$lib/actions/reveal";
-  import { getProjectsEntries, isGroup } from "$lib/conf";
+  import { getShowcaseProjectsEntries, isGroup } from "$lib/conf";
+  import { localizeHref } from "$lib/paraglide/runtime";
+  import { ArrowRight } from "@lucide/svelte";
+  import { Button } from "$lib/components/ui/button";
   import * as m from "$lib/paraglide/messages";
 
-  const projectsEntries = $derived(getProjectsEntries());
+  const projectsEntries = $derived(getShowcaseProjectsEntries());
 </script>
 
 <section id="projects" class="py-20 px-6 bg-secondary/30">
@@ -27,6 +30,13 @@
           </div>
         {/if}
       {/each}
+    </div>
+
+    <div use:reveal={{ delay: 200 }} class="mt-10 flex justify-center">
+      <Button href={localizeHref("/projects")} variant="outline" size="lg">
+        {m.projects_view_all()}
+        <ArrowRight class="w-4 h-4 ml-2" />
+      </Button>
     </div>
   </div>
 </section>

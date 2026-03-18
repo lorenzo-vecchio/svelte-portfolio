@@ -10,7 +10,8 @@
       "Bash(timeout 30 npm run:*)",
       "mcp__ide__getDiagnostics",
       "Bash(npm run:*)",
-      "Bash(echo Killed process on port 5173:*)"
+      "Bash(echo Killed process on port 5173:*)",
+      "Bash(npx tsc:*)"
     ]
   }
 }
