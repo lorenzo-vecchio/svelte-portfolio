@@ -44,6 +44,7 @@
 	"project_ef_docs_desc": "Documentation website for endpoint-fetcher built with Next.js and Nextra, providing comprehensive guides, API references, and examples.",
 	"project_ef_cache_desc": "Caching plugin for endpoint-fetcher with type-safe wrapper support.",
 	"project_ef_retry_desc": "A configurable retry plugin for endpoint-fetcher with multiple retry strategies and advanced configuration options.",
+	"project_filtro_fatture_desc": "A small web app I built at the request of some friends — quickly, almost entirely with AI assistance. It allows uploading a batch of FatturaPA electronic invoices (XML or ZIP), filtering them by supplier, customer, date, amount, and document type, and downloading the selected subset as a ZIP archive, optionally organized into subfolders by supplier or customer. Runs entirely in the browser: no data leaves your device.",
 	"project_portfolio_title": "Personal Portfolio (this website)",
 	"project_portfolio_desc": "My personal portfolio website built with SvelteKit and ShadcnUI to showcase my skills, projects and experience.",
 	"project_old_portfolio_title": "Old Portfolio Website",

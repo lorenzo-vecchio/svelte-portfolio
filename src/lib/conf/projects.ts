@@ -87,6 +87,15 @@ export function getProjectsEntries(): ProjectEntry[] {
 			],
 		},
 		{
+			title: 'filtra-fatture',
+			description: m.project_filtro_fatture_desc(),
+			technologies: ['SvelteKit', 'TypeScript'],
+			liveUrl: 'https://filtra-fatture.lorenzovecchio.dev/',
+			githubUrl: 'https://github.com/lorenzo-vecchio/filtra-fatture',
+			status: 'active',
+			showcase: true,
+		},
+		{
 			title: m.project_portfolio_title(),
 			description: m.project_portfolio_desc(),
 			technologies: ['SvelteKit', 'Tailwind CSS', 'TypeScript', 'ShadcnUI', 'Docker', 'Nginx'],

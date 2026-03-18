@@ -44,6 +44,7 @@
 	"project_ef_docs_desc": "Sito di documentazione per endpoint-fetcher, realizzato con Next.js e Nextra, con guide complete, riferimenti API ed esempi.",
 	"project_ef_cache_desc": "Plugin di caching per endpoint-fetcher con supporto per wrapper type-safe.",
 	"project_ef_retry_desc": "Plugin di retry configurabile per endpoint-fetcher, con diverse strategie di retry e opzioni di configurazione avanzate.",
+	"project_filtro_fatture_desc": "Una piccola web app che ho costruito su richiesta di alcuni amici — in fretta, quasi interamente insieme all'AI. Permette di caricare un batch di fatture elettroniche FatturaPA (XML o ZIP), filtrarle per fornitore, cliente, data, importo e tipo documento, e scaricare il sottoinsieme selezionato come archivio ZIP, eventualmente già organizzato in sottocartelle per fornitore o cliente. Gira interamente nel browser: nessun dato lascia il tuo dispositivo.",
 	"project_portfolio_title": "Portfolio Personale (questo sito)",
 	"project_portfolio_desc": "Il mio portfolio personale realizzato con SvelteKit e ShadcnUI per mostrare competenze, progetti ed esperienze.",
 	"project_old_portfolio_title": "Vecchio Portfolio",
