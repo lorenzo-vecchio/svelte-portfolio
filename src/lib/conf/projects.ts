@@ -5,6 +5,7 @@ export interface Project {
 	description: string;
 	technologies: string[];
 	liveUrl?: string;
+	downloadUrl?: string;
 	githubUrl?: string;
 	docsUrl?: string;
 	status: 'active' | 'upcoming' | 'legacy';
@@ -90,7 +91,7 @@ export function getProjectsEntries(): ProjectEntry[] {
 			title: 'filtra-fatture',
 			description: m.project_filtro_fatture_desc(),
 			technologies: ['SvelteKit', 'TypeScript'],
-			liveUrl: 'https://filtra-fatture.lorenzovecchio.dev/',
+			downloadUrl: 'https://github.com/lorenzo-vecchio/filtra-fatture/releases/latest',
 			githubUrl: 'https://github.com/lorenzo-vecchio/filtra-fatture',
 			status: 'active',
 			showcase: true,

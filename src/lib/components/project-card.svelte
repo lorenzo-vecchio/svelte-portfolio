@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { Project } from "$lib/conf";
-  import { Book, Clock, ExternalLink, Github, Zap } from "@lucide/svelte";
+  import { Book, Clock, Download, ExternalLink, Github, Zap } from "@lucide/svelte";
   import { Badge } from "./ui/badge";
   import { Button } from "./ui/button";
   import {
@@ -73,6 +73,19 @@
             >
               <ExternalLink class="w-4 h-4 mr-1" />
               {m.project_btn_live_demo()}
+            </Button>
+          {/if}
+
+          {#if project.downloadUrl}
+            <Button
+              size="sm"
+              variant="outline"
+              href={project.downloadUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Download class="w-4 h-4 mr-1" />
+              {m.project_btn_download()}
             </Button>
           {/if}
 
