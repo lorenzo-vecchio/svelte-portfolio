@@ -45,6 +45,7 @@
 	"project_ef_docs_desc": "Documentation website for endpoint-fetcher built with Next.js and Nextra, providing comprehensive guides, API references, and examples.",
 	"project_ef_cache_desc": "Caching plugin for endpoint-fetcher with type-safe wrapper support.",
 	"project_ef_retry_desc": "A configurable retry plugin for endpoint-fetcher with multiple retry strategies and advanced configuration options.",
+	"project_ef_auth_desc": "Authentication plugin for endpoint-fetcher — JWT, OAuth2, API Key, Basic, Bearer, HMAC, Digest, and Custom strategies.",
 	"project_filtro_fatture_desc": "A small desktop app I built at the request of some friends — with heavy AI assistance. It handles FatturaPA electronic invoices (XML, ZIP, or signed .p7m files): upload a batch, filter by supplier, customer, date, amount, and document type, then export the selection as a ZIP archive organized by supplier or customer. Sessions can be saved as projects and reopened later. It also features an AI analysis agent (Claude/GPT) that reads the loaded invoices and generates structured reports — with follow-up conversation support and Word export. Runs locally via Tauri: no data leaves your device unless you configure an AI API key.",
 	"project_portfolio_title": "Personal Portfolio (this website)",
 	"project_portfolio_desc": "My personal portfolio website built with SvelteKit and ShadcnUI to showcase my skills, projects and experience.",

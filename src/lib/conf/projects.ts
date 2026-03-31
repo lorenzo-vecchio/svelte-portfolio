@@ -84,6 +84,15 @@ export function getProjectsEntries(): ProjectEntry[] {
 					githubUrl: 'https://github.com/lorenzo-vecchio/endpoint-fetcher-retry',
 					docsUrl: 'https://endpoint-fetcher.lorenzovecchio.dev/plugins/retry_plugin',
 					status: 'active',
+				},
+				{
+					title: '@endpoint-fetcher/auth',
+					description: m.project_ef_auth_desc(),
+					technologies: ['TypeScript', 'Fetch API', 'npm'],
+					liveUrl: 'https://www.npmjs.com/package/@endpoint-fetcher/auth',
+					githubUrl: 'https://github.com/lorenzo-vecchio/endpoint-fetcher-auth',
+					docsUrl: 'https://endpoint-fetcher.lorenzovecchio.dev/plugins/auth_plugin',
+					status: 'active',
 				}
 			],
 		},
