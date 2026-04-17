@@ -4,6 +4,7 @@
   import { contacts } from "$lib/conf";
   import { ChevronDown, Github, Linkedin, Mail, MapPin } from "@lucide/svelte";
   import * as m from "$lib/paraglide/messages";
+  import { scramble } from "$lib/actions/scramble";
 </script>
 
 <section
@@ -30,6 +31,7 @@
 
     <!-- Subtitle -->
     <p
+      use:scramble={{ delay: 400, speed: 2 }}
       class="text-xl md:text-2xl text-muted-foreground max-w-2xl mb-8 animate-fade-in"
       style="animation-delay: 0.2s"
     >

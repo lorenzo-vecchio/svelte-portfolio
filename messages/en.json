@@ -13,6 +13,17 @@
 	"hero_location": "Milan, Italy",
 	"hero_cta_contact": "Get in touch",
 
+	"nav_about": "About",
+
+	"about_title": "About Me",
+	"about_subtitle": "A bit more about who I am",
+	"about_bio_1": "I'm a Full-Stack Software Developer based in Milan, currently building enterprise solutions at PwC Italy. My path started at ITS — a technical institute focused on software architecture — where I built a solid foundation in engineering principles, project management, and real-world development.",
+	"about_bio_2": "Since then I've worked across the stack at Nexid and Alten, shipping everything from React frontends to Spring Boot services to Socket.IO-powered real-time apps. Outside work, curiosity drives my side projects: a neural network from scratch in Go, a PocketBase clone in Rust, and open-source TypeScript tooling.",
+	"about_highlight_role": "Software Developer",
+	"about_highlight_company": "PwC Italy",
+	"about_highlight_location": "Milan, Italy",
+	"about_highlight_education": "ITS — Software Architecture",
+
 	"skills_title": "Skills",
 	"skills_subtitle": "Technologies and tools I work with",
 	"skill_cat_frontend": "Frontend",

@@ -13,6 +13,17 @@
 	"hero_location": "Milano, Italia",
 	"hero_cta_contact": "Scrivimi",
 
+	"nav_about": "Chi Sono",
+
+	"about_title": "Chi Sono",
+	"about_subtitle": "Un po' su di me",
+	"about_bio_1": "Sono un Full-Stack Software Developer a Milano, attualmente sviluppo soluzioni enterprise per PwC Italy. Il mio percorso è iniziato all'ITS — un istituto tecnico superiore focalizzato sull'architettura software — dove ho costruito una solida base in ingegneria del software, project management e sviluppo reale.",
+	"about_bio_2": "Da allora ho lavorato a tutto stack in Nexid e Alten, realizzando frontend in React, servizi Spring Boot e app real-time con Socket.IO. Fuori dal lavoro, la curiosità guida i miei progetti: una rete neurale da zero in Go, un clone di PocketBase in Rust e tooling TypeScript open-source.",
+	"about_highlight_role": "Software Developer",
+	"about_highlight_company": "PwC Italy",
+	"about_highlight_location": "Milano, Italia",
+	"about_highlight_education": "ITS — Architettura Software",
+
 	"skills_title": "Competenze",
 	"skills_subtitle": "Tecnologie e strumenti con cui lavoro",
 	"skill_cat_frontend": "Frontend",
