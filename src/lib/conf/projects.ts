@@ -34,7 +34,6 @@ export function getProjectsEntries(): ProjectEntry[] {
 			technologies: ['Rust', 'SQLite', 'tokio', 'axum'],
 			githubUrl: 'https://github.com/lorenzo-vecchio/quickbase',
 			status: 'upcoming',
-			showcase: true,
 		},
 		{
 			title: 'digit-recognizer',
