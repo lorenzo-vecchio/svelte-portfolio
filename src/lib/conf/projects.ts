@@ -128,3 +128,9 @@ export function getProjectsEntries(): ProjectEntry[] {
 export function getShowcaseProjectsEntries(): ProjectEntry[] {
 	return getProjectsEntries().filter((entry) => entry.showcase === true);
 }
+
+export function getTotalProjectsCount(): number {
+	return getProjectsEntries().reduce((count, entry) => {
+		return count + (isGroup(entry) ? entry.projects.length : 1);
+	}, 0);
+}
