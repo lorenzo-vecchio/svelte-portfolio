@@ -8,29 +8,27 @@
   };
 
   const { class: className = "", onswitch }: Props = $props();
-
-  const flags: Record<string, { emoji: string; label: string }> = {
-    en: { emoji: "🇬🇧", label: "English" },
-    it: { emoji: "🇮🇹", label: "Italiano" },
-  };
 </script>
 
-<div class={["flex items-center gap-1", className].join(" ")}>
-  {#each locales as locale}
-    {@const flag = flags[locale] ?? { emoji: locale.toUpperCase(), label: locale }}
+<div class={["flex items-center gap-0.5", className].join(" ")}>
+  {#each locales as locale, i}
+    {@const active = getLocale() === locale}
     <a
       href={localizeHref(page.url.pathname, { locale })}
       data-sveltekit-reload
       onclick={onswitch}
-      aria-label={flag.label}
+      aria-label={locale.toUpperCase()}
       class={[
-        "flex items-center justify-center w-8 h-8 rounded transition-all text-lg",
-        getLocale() === locale
-          ? "ring-2 ring-primary bg-primary/10 scale-110"
-          : "opacity-60 hover:opacity-100",
+        "px-1.5 py-0.5 text-sm rounded transition-all",
+        active
+          ? "font-bold text-foreground"
+          : "font-light text-muted-foreground hover:text-foreground",
       ]}
     >
-      <span role="img" aria-hidden="true">{flag.emoji}</span>
+      {locale}
     </a>
+    {#if i < locales.length - 1}
+      <span class="text-muted-foreground/40 text-sm select-none">|</span>
+    {/if}
   {/each}
 </div>
