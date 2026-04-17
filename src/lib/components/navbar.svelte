@@ -37,20 +37,23 @@
         : "",
   ]}
 >
-  <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex items-center">
     <Button href="/" variant="ghost" class="text-xl font-bold text-primary">
       <span class="font-black">LGV</span>
     </Button>
 
-    <!-- Desktop Navigation -->
-    <div class="hidden md:flex items-center gap-1">
+    <!-- Desktop Navigation (centered) -->
+    <div class="hidden md:flex items-center gap-1 absolute left-1/2 -translate-x-1/2">
       {#each navItems as item}
         <Button href={item.href} variant="ghost">
           {item.label}
         </Button>
       {/each}
-      <!-- Language switcher -->
-      <LanguageSwitcher class="ml-1 border-l border-border pl-2 mr-2" />
+    </div>
+
+    <!-- Right controls -->
+    <div class="hidden md:flex items-center gap-1 ml-auto">
+      <LanguageSwitcher class="border-r border-border pr-2 mr-1" />
       <ThemeButton />
     </div>
 
