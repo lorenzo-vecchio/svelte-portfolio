@@ -49,6 +49,8 @@
 	"project_group_expand": "↓ Clicca per espandere ↓",
 	"project_group_count": "{count} progetti",
 
+	"project_ash_desc": "Ash è un linguaggio di programmazione progettato da zero per essere scritto da sistemi AI e letto dagli esseri umani. Ogni scelta — sintassi, sistema dei tipi, libreria standard, modello di memoria — è ottimizzata per un unico obiettivo: generare codice corretto ed espressivo nel minor numero di token possibile.",
+
 	"project_quickbase_desc": "Un clone in Rust di PocketBase, realizzato come progetto di apprendimento. Implementa le API CRUD complete per collezioni e record con uno schema di campi tipizzato, storage SQLite integrato (binario singolo) e un layer di validazione che rispecchia l'architettura dei form di PocketBase. Le estensioni previste includono un motore di scripting Rhai per gli hook, una web UI per gestire le collezioni, una CLI per pubblicare modifiche allo schema su un server remoto e un server MCP integrato per il controllo tramite AI.",
 	"project_digit_recognizer_desc": "Un percettrone multistrato scritto interamente in Go, senza dipendenze ML. Implementa ogni componente da zero: forward e backward pass, attivazioni ReLU e Softmax, cross-entropy loss, inizializzazione dei pesi con He, e mini-batch SGD. Addestrato su 60.000 immagini MNIST, raggiunge il 97.4% di accuratezza sul set di test di 10.000 immagini. Il codice sorgente è scritto intenzionalmente come artefatto didattico — ogni concetto (backprop, la regola della catena, overfitting, normalizzazione) è spiegato in italiano direttamente nei commenti.",
 	"project_ef_group_desc": "Una raccolta di librerie per costruire client API type-safe in TypeScript usando la Fetch API, con un builder principale e diversi plugin.",

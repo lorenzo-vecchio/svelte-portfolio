@@ -29,6 +29,14 @@ export function isGroup(entry: ProjectEntry): entry is ProjectGroup {
 export function getProjectsEntries(): ProjectEntry[] {
 	return [
 		{
+			title: 'ash',
+			description: m.project_ash_desc(),
+			technologies: ['Language Design', 'Compilers', 'AI'],
+			githubUrl: 'https://github.com/lorenzo-vecchio/ash',
+			status: 'upcoming',
+			showcase: true,
+		},
+		{
 			title: 'quickbase',
 			description: m.project_quickbase_desc(),
 			technologies: ['Rust', 'SQLite', 'tokio', 'axum'],
