@@ -59,7 +59,7 @@
 
     <!-- Mobile Menu Button -->
   <button
-    class="md:hidden inline-flex items-center justify-center rounded-md p-2 hover:bg-muted"
+    class="md:hidden ml-auto inline-flex items-center justify-center rounded-md p-2 hover:bg-muted"
     onclick={() => (isMobileMenuOpen = !isMobileMenuOpen)}
   >
     {#if isMobileMenuOpen}
