@@ -89,17 +89,18 @@
   </div>
 
   <!-- Scroll indicator -->
-  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-    <ChevronDown class="w-6 h-6 text-muted-foreground" />
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2">
+    <div class="animate-float">
+      <ChevronDown class="w-5 h-5 text-muted-foreground/50" />
+    </div>
   </div>
 
-  <!-- Background decoration -->
-  <div
-    class="absolute top-1/4 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none"
-  />
-  <div
-    class="absolute bottom-1/4 left-0 w-64 h-64 bg-primary/20 rounded-full blur-3xl pointer-events-none"
-  />
+  <!-- Grid background -->
+  <div class="hero-grid absolute inset-0 pointer-events-none"></div>
+
+  <!-- Background ambient blobs -->
+  <div class="absolute top-1/4 right-0 w-72 h-72 bg-primary/8 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute bottom-1/3 left-0 w-56 h-56 bg-primary/12 rounded-full blur-3xl pointer-events-none"></div>
 </section>
 
 <style>

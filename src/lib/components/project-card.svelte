@@ -20,7 +20,7 @@
 </script>
 
 <Card
-  class="card-shadow hover:border-primary/50 transition-colors overflow-hidden"
+  class="card-shadow hover:border-primary/50 overflow-hidden"
 >
   <div class="flex flex-col md:flex-row">
     <div class="flex-1">
@@ -52,7 +52,7 @@
             </Badge>
           {/if}
         </div>
-        <CardDescription class='text-justify'>{project.description}</CardDescription>
+        <CardDescription>{project.description}</CardDescription>
       </CardHeader>
       <CardContent>
         <div class="flex flex-wrap gap-2 mb-4 mt-4">

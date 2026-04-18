@@ -60,12 +60,12 @@
   <!-- Stacked layers behind -->
   {#if stackCount >= 3}
     <Card
-      class="absolute inset-x-3.5 top-8 h-[calc(100%-20px)] opacity-35 border-border/50 transition-all duration-300 group-hover:inset-x-2.5 group-hover:top-10"
+      class="absolute inset-x-3.5 top-8 h-[calc(100%-20px)] opacity-35 border-border/50 shadow-sm transition-all duration-300 group-hover:inset-x-2.5 group-hover:top-10"
     />
   {/if}
   {#if stackCount >= 2}
     <Card
-      class="absolute inset-x-2 top-2.5 h-[calc(100%-10px)] opacity-55 border-border/60 transition-all duration-300 group-hover:inset-x-1 group-hover:top-3"
+      class="absolute inset-x-2 top-2.5 h-[calc(100%-10px)] opacity-55 border-border/60 shadow-sm transition-all duration-300 group-hover:inset-x-1 group-hover:top-3"
     />
   {/if}
 
@@ -77,7 +77,7 @@
 
   <!-- Front card -->
   <Card
-    class="relative card-shadow border-border hover:border-primary/50 transition-all duration-300 group-hover:-translate-y-0.5 transform group-hover:scale-[1.01]"
+    class="relative shadow-sm border-border hover:border-primary/50 transition-all duration-300 group-hover:-translate-y-0.5 transform group-hover:scale-[1.01]"
   >
     <CardHeader>
       <div class="flex items-center justify-between">

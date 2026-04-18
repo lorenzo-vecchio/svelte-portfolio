@@ -10,7 +10,8 @@ export function reveal(
 ) {
   node.style.opacity = '0';
   node.style.transform = `translateY(${y}px)`;
-  node.style.transition = `opacity 0.5s ease ${delay}ms, transform 0.5s ease ${delay}ms`;
+  node.style.transition = `opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1) ${delay}ms, transform 0.45s cubic-bezier(0.22, 1, 0.36, 1) ${delay}ms`;
+  node.style.willChange = 'opacity, transform';
 
   if (!('IntersectionObserver' in window)) {
     node.style.opacity = '1';
@@ -23,6 +24,7 @@ export function reveal(
       if (entry.isIntersecting) {
         node.style.opacity = '1';
         node.style.transform = 'translateY(0)';
+        node.style.willChange = 'auto';
         observer.disconnect();
       }
     },

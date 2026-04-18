@@ -35,7 +35,7 @@
       <div use:reveal={{ delay: 250 }} class="grid grid-cols-1 gap-3">
         {#each highlights as { icon: Icon, label }}
           <div
-            class="flex items-center gap-3 px-4 py-3 rounded-lg bg-secondary border border-border"
+            class="highlight-item flex items-center gap-3 px-4 py-3 rounded-lg bg-secondary border border-border transition-colors duration-200 hover:border-primary/30"
           >
             <Icon class="w-4 h-4 text-primary shrink-0" />
             <span class="text-sm text-foreground/80">{label}</span>
@@ -45,3 +45,9 @@
     </div>
   </div>
 </section>
+
+<style>
+  .highlight-item {
+    border-left: 2px solid color-mix(in oklch, var(--primary) 40%, transparent);
+  }
+</style>

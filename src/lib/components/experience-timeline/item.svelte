@@ -26,7 +26,7 @@
     {/if}
   </div>
 
-  <Card class="card-shadow hover:border-primary/50 transition-colors">
+  <Card class="card-shadow hover:border-primary/50">
     <CardContent class="p-6">
       <div
         class="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-4"

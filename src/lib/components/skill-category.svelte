@@ -14,7 +14,7 @@
 
 <div use:reveal={{ delay: index * 100 }}>
 <Card
-  class="card-shadow hover:border-primary/50 transition-colors"
+  class="card-shadow hover:border-primary/50"
 >
   <CardHeader class="pb-4">
     <CardTitle class="flex items-center gap-3 text-lg">
