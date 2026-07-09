@@ -46,6 +46,7 @@
 	"project_btn_download": "Download",
 	"project_btn_source": "Source",
 	"project_btn_docs": "Docs",
+	"project_btn_website_url": "Website",
 	"project_group_expand": "↓ Click to expand ↓",
 	"project_group_count": "{count} projects",
 

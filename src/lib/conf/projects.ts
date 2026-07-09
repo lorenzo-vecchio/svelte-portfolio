@@ -8,6 +8,7 @@ export interface Project {
 	downloadUrl?: string;
 	githubUrl?: string;
 	docsUrl?: string;
+	websiteUrl?: string;
 	status: 'active' | 'upcoming' | 'legacy';
 	showcase?: boolean;
 }
@@ -107,8 +108,9 @@ export function getProjectsEntries(): ProjectEntry[] {
 			title: 'FattureHub',
 			description: m.project_filtro_fatture_desc(),
 			technologies: ['SvelteKit', 'TypeScript'],
-			downloadUrl: 'https://github.com/lorenzo-vecchio/FattureHub/releases/latest',
+			downloadUrl: 'https://fatturehub.lorenzovecchio.dev/download',
 			githubUrl: 'https://github.com/lorenzo-vecchio/FattureHub',
+			websiteUrl: 'https://fatturehub.lorenzovecchio.dev',
 			status: 'active',
 			showcase: true,
 		},

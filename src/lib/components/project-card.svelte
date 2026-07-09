@@ -1,6 +1,14 @@
 <script lang="ts">
   import type { Project } from "$lib/conf";
-  import { Book, Clock, Download, ExternalLink, Github, Zap } from "@lucide/svelte";
+  import {
+    Book,
+    Clock,
+    Download,
+    ExternalLink,
+    Github,
+    Zap,
+    Globe
+  } from "@lucide/svelte";
   import { Badge } from "./ui/badge";
   import { Button } from "./ui/button";
   import {
@@ -19,9 +27,7 @@
   let { project }: Props = $props();
 </script>
 
-<Card
-  class="card-shadow hover:border-primary/50 overflow-hidden"
->
+<Card class="card-shadow hover:border-primary/50 overflow-hidden">
   <div class="flex flex-col md:flex-row">
     <div class="flex-1">
       <CardHeader>
@@ -63,6 +69,19 @@
           {/each}
         </div>
         <div class="flex flex-wrap gap-3">
+          {#if project.websiteUrl}
+            <Button
+              size="sm"
+              variant="outline"
+              href={project.websiteUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Globe class="w-4 h-4 mr-1" />
+              {m.project_btn_website_url()}
+            </Button>
+          {/if}
+
           {#if project.liveUrl}
             <Button
               size="sm"
