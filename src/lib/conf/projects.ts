@@ -115,12 +115,20 @@ export function getProjectsEntries(): ProjectEntry[] {
 			showcase: true,
 		},
 		{
+			title: 'gorch',
+			description: m.project_gorch_desc(),
+			technologies: ['Go', 'Concurrency', 'Orchestration'],
+			githubUrl: 'https://github.com/lorenzo-vecchio/gorch',
+			status: 'active',
+			showcase: true,
+		},
+		{
 			title: 'nook',
 			description: m.project_nook_desc(),
 			technologies: ['Go', 'CLI', 'Homebrew', 'Scoop'],
 			githubUrl: 'https://github.com/lorenzo-vecchio/nook',
 			status: 'active',
-			showcase: true,
+			showcase: false,
 		},
 		{
 			title: m.project_portfolio_title(),
