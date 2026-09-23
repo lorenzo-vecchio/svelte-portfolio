@@ -8,6 +8,8 @@
   import { page } from "$app/state";
 
   let { children } = $props();
+
+  const isTui = $derived(page.route.id?.startsWith("/tui") ?? false);
 </script>
 
 <svelte:head>
@@ -40,6 +42,10 @@
 </svelte:head>
 
 <ModeWatcher />
-<Navbar />
+{#if !isTui}
+  <Navbar />
+{/if}
 {@render children()}
-<Footer />
+{#if !isTui}
+  <Footer />
+{/if}
