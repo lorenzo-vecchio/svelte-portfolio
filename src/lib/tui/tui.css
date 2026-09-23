@@ -1,0 +1,250 @@
+/*
+ * TUI theme — a single source of truth for the terminal look & feel.
+ * Palette is scoped to `.tui-root` so the normal site is never affected.
+ */
+
+.tui-root {
+	--tui-bg: #0a0a0f;
+	--tui-bg-alt: #0d0d14;
+	--tui-panel: #12121b;
+	--tui-panel-alt: #171724;
+	--tui-border: #2a2a3c;
+	--tui-border-soft: #1e1e2c;
+	--tui-border-active: #8b5cf6;
+
+	--tui-text: #d8d8e2;
+	--tui-dim: #7a7a90;
+	--tui-faint: #45455a;
+
+	--tui-accent: #a78bfa;
+	--tui-green: #4ade80;
+	--tui-yellow: #facc15;
+	--tui-red: #f87171;
+	--tui-cyan: #22d3ee;
+	--tui-blue: #60a5fa;
+
+	--tui-selection: #221d3d;
+
+	position: relative;
+	z-index: 0;
+	display: flex;
+	flex-direction: column;
+	min-height: 100dvh;
+	background: var(--tui-bg);
+	color: var(--tui-text);
+	font-family: "JetBrains Mono", var(--font-mono), ui-monospace, SFMono-Regular, Menlo,
+		Consolas, monospace;
+	font-size: 13px;
+	line-height: 1.5;
+	font-variant-ligatures: none;
+	-webkit-font-smoothing: antialiased;
+}
+
+/* The page canvas matches the terminal so no white flash/edges leak through. */
+body:has(.tui-root) {
+	background: #0a0a0f;
+}
+
+/* Subtle CRT scanlines. Purely decorative and static (no motion). */
+.tui-root::after {
+	content: "";
+	position: fixed;
+	inset: 0;
+	z-index: 30;
+	pointer-events: none;
+	background: repeating-linear-gradient(
+		to bottom,
+		rgba(255, 255, 255, 0.018) 0px,
+		rgba(255, 255, 255, 0.018) 1px,
+		transparent 1px,
+		transparent 3px
+	);
+}
+
+.tui-root ::selection {
+	background: var(--tui-selection);
+	color: var(--tui-text);
+}
+
+.tui-root *:focus-visible {
+	outline: 1px solid var(--tui-border-active);
+	outline-offset: 2px;
+}
+
+/* ---------- Panels ---------- */
+
+.tui-panel {
+	background: var(--tui-panel);
+	border: 1px solid var(--tui-border);
+}
+
+.tui-panel--active {
+	border-color: var(--tui-border-active);
+}
+
+.tui-panel-head {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.3rem 0.6rem;
+	border-bottom: 1px solid var(--tui-border);
+	color: var(--tui-dim);
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	font-size: 10px;
+}
+
+/* ---------- Lists / rows ---------- */
+
+.tui-row {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	width: 100%;
+	padding: 0.2rem 0.6rem;
+	color: var(--tui-text);
+	text-align: left;
+	cursor: pointer;
+	border-left: 2px solid transparent;
+}
+
+.tui-row:hover {
+	background: var(--tui-panel-alt);
+}
+
+.tui-row--active {
+	background: var(--tui-selection);
+	border-left-color: var(--tui-accent);
+}
+
+.tui-row--muted {
+	color: var(--tui-dim);
+}
+
+/* ---------- Keycaps ---------- */
+
+.tui-key {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 1.5rem;
+	height: 1.4rem;
+	padding: 0 0.35rem;
+	border: 1px solid var(--tui-border);
+	border-bottom-width: 2px;
+	border-radius: 3px;
+	background: var(--tui-panel-alt);
+	color: var(--tui-text);
+	font-size: 11px;
+	line-height: 1;
+	white-space: nowrap;
+}
+
+.tui-key--wide {
+	min-width: 2.6rem;
+}
+
+/* Focusable keycap (used by clickable which-key chips). */
+button.tui-key {
+	cursor: pointer;
+}
+
+button.tui-key:hover {
+	border-color: var(--tui-accent);
+	color: var(--tui-accent);
+}
+
+/* ---------- Text helpers ---------- */
+
+.tui-fg { color: var(--tui-text); }
+.tui-dim { color: var(--tui-dim); }
+.tui-faint { color: var(--tui-faint); }
+.tui-accent { color: var(--tui-accent); }
+.tui-green { color: var(--tui-green); }
+.tui-yellow { color: var(--tui-yellow); }
+.tui-red { color: var(--tui-red); }
+.tui-cyan { color: var(--tui-cyan); }
+.tui-blue { color: var(--tui-blue); }
+
+.tui-link {
+	color: var(--tui-cyan);
+	cursor: pointer;
+	text-decoration: underline;
+	text-decoration-color: color-mix(in srgb, var(--tui-cyan) 40%, transparent);
+	text-underline-offset: 3px;
+}
+
+.tui-link:hover {
+	color: var(--tui-bg);
+	background: var(--tui-cyan);
+	text-decoration-color: transparent;
+}
+
+/* ---------- Blinking block cursor ---------- */
+
+@keyframes tui-blink {
+	0%,
+	49% {
+		opacity: 1;
+	}
+	50%,
+	100% {
+		opacity: 0;
+	}
+}
+
+.tui-cursor {
+	display: inline-block;
+	width: 0.62em;
+	height: 1.05em;
+	background: var(--tui-text);
+	vertical-align: -0.18em;
+	animation: tui-blink 1.05s steps(1, end) infinite;
+}
+
+.tui-cursor--accent { background: var(--tui-accent); }
+.tui-cursor--green { background: var(--tui-green); }
+
+/* ---------- Native input resets (block cursor is rendered by us) ---------- */
+
+.tui-input {
+	background: transparent;
+	border: 0;
+	outline: none;
+	font: inherit;
+	width: 100%;
+	caret-color: transparent;
+}
+
+.tui-input::placeholder {
+	color: var(--tui-faint);
+}
+
+/* ---------- Scrollbars ---------- */
+
+.tui-scroll {
+	overflow: auto;
+	scrollbar-width: thin;
+	scrollbar-color: var(--tui-border) transparent;
+}
+
+.tui-scroll::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+}
+
+.tui-scroll::-webkit-scrollbar-thumb {
+	background: var(--tui-border);
+}
+
+.tui-scroll::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+/* ---------- Reduced motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+	.tui-cursor {
+		animation: none;
+	}
+}
