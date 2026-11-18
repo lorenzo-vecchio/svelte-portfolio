@@ -1,0 +1,12 @@
+node_modules
+build
+.svelte-kit
+.git
+.gitignore
+.env
+.env.*
+npm-debug.log*
+.vscode
+.claude
+.taste-skill
+src/lib/data
