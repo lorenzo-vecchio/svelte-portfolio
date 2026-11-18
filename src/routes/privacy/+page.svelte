@@ -19,6 +19,7 @@
 
 	<h2>{m.privacy_h1()}</h2>
 	<p>{m.privacy_no_cookies()}</p>
+	<p>{m.privacy_local_storage()}</p>
 
 	<h2>{m.privacy_h2()}</h2>
 	<p>{m.privacy_analytics()}</p>

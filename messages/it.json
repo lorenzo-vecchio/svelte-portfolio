@@ -176,6 +176,7 @@
 	"privacy_intro": "Questo sito è progettato per essere veloce, silenzioso e rispettoso delle persone che lo usano. Nessuna pubblicità, nessun pixel di tracciamento, nessun banner per i cookie.",
 	"privacy_h1": "Cosa non fa questo sito",
 	"privacy_no_cookies": "Questo sito non imposta alcun cookie. Non c’è pubblicità, profilazione o tracciamento tra siti, e non c’è un banner perché non c’è nulla a cui acconsentire.",
+	"privacy_local_storage": "La scelta del tema è salvata localmente nel browser così la pagina si apre nella modalità giusta. Non lascia mai il tuo dispositivo.",
 	"privacy_h2": "Analytics",
 	"privacy_analytics": "Uso Umami, uno strumento di analytics open source e privacy-first, ospitato su analytics.lorenzovecchio.dev. Registra visualizzazioni di pagina e dati di utilizzo di base per capire quali pagine sono utili.",
 	"privacy_analytics_li1": "Nessuna informazione personalmente identificabile viene raccolta.",
