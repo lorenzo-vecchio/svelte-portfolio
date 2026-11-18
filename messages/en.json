@@ -175,7 +175,7 @@
 	"privacy_updated": "Last updated: 18 November 2026",
 	"privacy_intro": "This site is built to be fast, quiet, and respectful of the people using it. No advertising, no tracking pixels, no cookie banners.",
 	"privacy_h1": "What this site does not do",
-	"privacy_no_cookies": "This site does not set cookies for advertising, profiling, or cross-site tracking. There is no cookie banner because there is nothing to consent to.",
+	"privacy_no_cookies": "This site does not set any cookies. There is no advertising, profiling, or cross-site tracking, and no cookie banner because there is nothing to consent to.",
 	"privacy_h2": "Analytics",
 	"privacy_analytics": "I use Umami, a privacy-first, open-source analytics tool hosted at analytics.lorenzovecchio.dev. It records page views and basic usage data so I can understand which pages are useful.",
 	"privacy_analytics_li1": "No personally identifiable information is collected.",

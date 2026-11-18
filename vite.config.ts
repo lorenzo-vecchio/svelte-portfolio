@@ -8,7 +8,9 @@ export default defineConfig({
 		paraglideVitePlugin({
 			project: './project.inlang',
 			outdir: './src/lib/paraglide',
-			strategy: ['url', 'cookie', 'baseLocale'],
+			// The URL is the only source of truth. No locale cookie is set, so
+			// the privacy policy's "no cookie banner" statement stays literal.
+			strategy: ['url', 'baseLocale'],
 		}),
 		tailwindcss(),
 		sveltekit(),

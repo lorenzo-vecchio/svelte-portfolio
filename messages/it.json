@@ -175,7 +175,7 @@
 	"privacy_updated": "Ultimo aggiornamento: 18 novembre 2026",
 	"privacy_intro": "Questo sito è progettato per essere veloce, silenzioso e rispettoso delle persone che lo usano. Nessuna pubblicità, nessun pixel di tracciamento, nessun banner per i cookie.",
 	"privacy_h1": "Cosa non fa questo sito",
-	"privacy_no_cookies": "Questo sito non imposta cookie per pubblicità, profilazione o tracciamento tra siti. Non c’è un banner perché non c’è nulla a cui acconsentire.",
+	"privacy_no_cookies": "Questo sito non imposta alcun cookie. Non c’è pubblicità, profilazione o tracciamento tra siti, e non c’è un banner perché non c’è nulla a cui acconsentire.",
 	"privacy_h2": "Analytics",
 	"privacy_analytics": "Uso Umami, uno strumento di analytics open source e privacy-first, ospitato su analytics.lorenzovecchio.dev. Registra visualizzazioni di pagina e dati di utilizzo di base per capire quali pagine sono utili.",
 	"privacy_analytics_li1": "Nessuna informazione personalmente identificabile viene raccolta.",
