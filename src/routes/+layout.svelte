@@ -8,6 +8,7 @@
 	import ScrollProgress from '$lib/components/scroll-progress.svelte';
 	import SiteHeader from '$lib/components/site-header.svelte';
 	import SiteFooter from '$lib/components/site-footer.svelte';
+	import { gridShift } from '$lib/actions/grid-shift';
 
 	let { children } = $props();
 
@@ -73,6 +74,8 @@
 	<meta name="twitter:description" content={description} />
 	<meta name="twitter:image" content={ogImage} />
 </svelte:head>
+
+<div class="sheet-grid" use:gridShift aria-hidden="true"></div>
 
 <a class="skip-link" href="#main">{m.nav_skip()}</a>
 <BootSequence />

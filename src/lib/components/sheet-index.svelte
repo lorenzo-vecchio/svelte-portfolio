@@ -11,7 +11,8 @@
 	let { items }: { items: IndexItem[] } = $props();
 
 	let active = $state(0);
-	let visible = $state(false);
+	let hidden = $state(false);
+	let inverse = $state(false);
 
 	onMount(() => {
 		const sections = items
@@ -31,103 +32,117 @@
 
 		for (const section of sections) observer.observe(section);
 
-		let footerVisible = false;
 		const footer = document.querySelector('.site-footer');
 		const footerObserver = new IntersectionObserver(
 			(entries) => {
-				footerVisible = entries[0]?.isIntersecting ?? false;
-				onScroll();
+				hidden = entries[0]?.isIntersecting ?? false;
 			},
-			{ threshold: 0 }
+			{ threshold: 0, rootMargin: '0px 0px 160px 0px' }
 		);
 		if (footer) footerObserver.observe(footer);
 
-		let frame = 0;
-		const onScroll = () => {
-			if (frame) return;
-			frame = requestAnimationFrame(() => {
-				frame = 0;
-				visible = window.scrollY > window.innerHeight * 0.55 && !footerVisible;
-			});
-		};
-
-		onScroll();
-		window.addEventListener('scroll', onScroll, { passive: true });
-		window.addEventListener('resize', onScroll);
+		const contact = document.getElementById('contact');
+		const contactObserver = new IntersectionObserver(
+			(entries) => {
+				inverse = entries[0]?.isIntersecting ?? false;
+			},
+			{ rootMargin: '-30% 0px -55% 0px', threshold: 0 }
+		);
+		if (contact) contactObserver.observe(contact);
 
 		return () => {
 			observer.disconnect();
 			footerObserver.disconnect();
-			window.cancelAnimationFrame(frame);
-			window.removeEventListener('scroll', onScroll);
-			window.removeEventListener('resize', onScroll);
+			contactObserver.disconnect();
 		};
 	});
 </script>
 
 <nav
 	class="sheet-index"
-	data-visible={visible}
+	data-hidden={hidden}
+	data-inverse={inverse}
+	inert={hidden}
 	aria-label={m.index_label()}
 	style={`--index-progress:${((active + 1) / items.length) * 100}%`}
 >
-	<span class="sheet-index-title" aria-hidden="true">{m.footer_nav()}</span>
-	<span class="sheet-index-rail" aria-hidden="true"><i></i></span>
-	<ul>
-		{#each items as item, index (item.id)}
-			<li data-active={index === active}>
-				<a
-					href={`#${item.id}`}
-					aria-current={index === active ? 'true' : undefined}
-					title={item.label}
-				>
-					<span class="idx-code">{item.code}</span>
-					<span class="idx-label">{item.label}</span>
-				</a>
-			</li>
-		{/each}
-	</ul>
+	<div class="sheet-index-head">
+		<span class="sheet-index-title">{m.footer_nav()}</span>
+		<span class="sheet-index-meta">01 / 01</span>
+	</div>
+
+	<div class="sheet-index-body">
+		<span class="sheet-index-rail" aria-hidden="true"><i></i></span>
+		<ol>
+			{#each items as item, index (item.id)}
+				<li data-active={index === active}>
+					<a
+						href={`#${item.id}`}
+						aria-current={index === active ? 'true' : undefined}
+					>
+						<span class="idx-code">{item.code}</span>
+						<span class="idx-label">{item.label}</span>
+						<span class="idx-tick" aria-hidden="true"></span>
+					</a>
+				</li>
+			{/each}
+		</ol>
+	</div>
+
+	<div class="sheet-index-foot">Sheet 01 · Rev 2026.11</div>
 </nav>
 
 <style>
 	.sheet-index {
 		position: fixed;
-		right: 11px;
+		left: 24px;
 		top: 50%;
 		z-index: 40;
-		transform: translateY(-50%) translateX(8px);
-		opacity: 0;
-		pointer-events: none;
+		width: 120px;
+		transform: translateY(-50%);
 		transition:
-			opacity 0.35s var(--ease-out),
-			transform 0.35s var(--ease-out);
+			opacity 0.3s var(--ease-out),
+			transform 0.3s var(--ease-out);
 	}
 
-	.sheet-index[data-visible='true'] {
-		opacity: 1;
-		transform: translateY(-50%);
-		pointer-events: auto;
+	.sheet-index-head {
+		display: flex;
+		align-items: baseline;
+		justify-content: space-between;
+		gap: 0.5rem;
+		padding-bottom: 0.45rem;
+		margin-bottom: 0.55rem;
+		border-bottom: 1px solid var(--rule-strong);
 	}
 
 	.sheet-index-title {
-		display: block;
-		text-align: right;
 		font-family: var(--font-mono);
-		font-size: 7px;
+		font-size: 10px;
 		letter-spacing: 0.14em;
 		text-transform: uppercase;
 		color: var(--ink-faint);
-		padding-right: 9px;
-		margin-bottom: 7px;
+	}
+
+	.sheet-index-meta {
+		font-family: var(--font-mono);
+		font-size: 8px;
+		letter-spacing: 0.08em;
+		color: var(--ink-faint);
+		white-space: nowrap;
+	}
+
+	.sheet-index-body {
+		position: relative;
+		padding-right: 14px;
 	}
 
 	.sheet-index-rail {
 		position: absolute;
-		right: 3px;
-		top: 24px;
+		right: 4px;
+		top: 0;
 		bottom: 0;
 		width: 1px;
-		background: var(--rule-strong);
+		background: var(--rule);
 	}
 
 	.sheet-index-rail i {
@@ -137,86 +152,129 @@
 		width: 1px;
 		height: var(--index-progress, 0%);
 		background: var(--accent);
-		transition: height 0.45s var(--ease-out);
+		transition: height 0.5s var(--ease-out);
 	}
 
-	.sheet-index ul {
+	.sheet-index ol {
 		list-style: none;
 		margin: 0;
 		padding: 0;
 		display: flex;
 		flex-direction: column;
-		gap: 5px;
+		gap: 1px;
 	}
 
 	.sheet-index li {
-		position: relative;
-		display: flex;
-		justify-content: flex-end;
+		min-width: 0;
 	}
 
 	.sheet-index a {
-		position: relative;
-		display: flex;
+		display: grid;
+		grid-template-columns: 20px minmax(0, 1fr) 12px;
 		align-items: center;
-		justify-content: flex-end;
-		width: 34px;
-		height: 18px;
-		font-family: var(--font-mono);
-		font-size: 9px;
-		letter-spacing: 0.06em;
-		color: var(--ink-soft);
+		gap: 6px;
+		padding: 0.31rem 0;
+		color: var(--ink-faint);
 		transition: color 0.16s ease;
 	}
 
-	.sheet-index a::after {
-		content: '';
-		position: absolute;
-		right: 0;
-		top: 50%;
-		width: 8px;
-		height: 1px;
-		background: currentColor;
-		transform: translateY(-50%);
+	.idx-code {
+		font-family: var(--font-mono);
+		font-size: 10px;
+		letter-spacing: 0.06em;
 	}
 
-	.sheet-index a:hover,
-	.sheet-index a[aria-current='true'] {
+	.idx-label {
+		font-family: var(--font-mono);
+		font-size: 10px;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	.idx-tick {
+		justify-self: end;
+		width: 6px;
+		height: 1px;
+		background: currentColor;
+		transition:
+			width 0.2s var(--ease-out),
+			background-color 0.2s ease;
+	}
+
+	.sheet-index a:hover {
 		color: var(--ink);
 	}
 
 	.sheet-index li[data-active='true'] a {
+		color: var(--ink);
+	}
+
+	.sheet-index li[data-active='true'] .idx-code {
 		color: var(--accent-text);
+		font-size: 11px;
+		font-weight: 500;
 	}
 
-	.sheet-index li[data-active='true'] a::after {
-		width: 11px;
+	.sheet-index li[data-active='true'] .idx-label {
+		font-size: 11px;
+		font-weight: 500;
 	}
 
-	.idx-label {
-		position: absolute;
-		right: 26px;
-		top: 50%;
-		transform: translate(4px, -50%);
-		opacity: 0;
-		pointer-events: none;
-		white-space: nowrap;
-		font-size: 9px;
+	.sheet-index li[data-active='true'] .idx-tick {
+		width: 12px;
+		background: var(--accent);
+	}
+
+	.sheet-index-foot {
+		margin-top: 0.75rem;
+		padding-top: 0.45rem;
+		border-top: 1px solid var(--rule);
+		font-family: var(--font-mono);
+		font-size: 8px;
 		letter-spacing: 0.06em;
 		text-transform: uppercase;
-		color: var(--ink-soft);
-		background: var(--paper);
-		border: 1px solid var(--rule);
-		padding: 2px 6px;
-		transition:
-			opacity 0.16s ease,
-			transform 0.2s var(--ease-out);
+		color: var(--ink-faint);
 	}
 
-	.sheet-index li:hover .idx-label,
-	.sheet-index a:focus-visible .idx-label {
-		opacity: 1;
-		transform: translate(0, -50%);
+	.sheet-index[data-hidden='true'] {
+		opacity: 0;
+		transform: translateY(-50%) translateX(-8px);
+		pointer-events: none;
+	}
+
+	.sheet-index[data-inverse='true'] .sheet-index-title,
+	.sheet-index[data-inverse='true'] .sheet-index-meta,
+	.sheet-index[data-inverse='true'] .sheet-index-foot {
+		color: var(--band-soft);
+	}
+
+	.sheet-index[data-inverse='true'] .sheet-index-head,
+	.sheet-index[data-inverse='true'] .sheet-index-foot {
+		border-color: var(--band-rule);
+	}
+
+	.sheet-index[data-inverse='true'] .sheet-index-rail {
+		background: var(--band-rule);
+	}
+
+	.sheet-index[data-inverse='true'] a {
+		color: var(--band-soft);
+	}
+
+	.sheet-index[data-inverse='true'] a:hover,
+	.sheet-index[data-inverse='true'] li[data-active='true'] a {
+		color: var(--band-ink);
+	}
+
+	.sheet-index[data-inverse='true'] li[data-active='true'] .idx-code {
+		color: var(--band-ink);
+	}
+
+	.sheet-index[data-inverse='true'] li[data-active='true'] .idx-tick {
+		background: var(--accent);
 	}
 
 	@media (max-width: 1199px) {

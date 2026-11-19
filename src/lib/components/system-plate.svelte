@@ -39,320 +39,446 @@
 		<span>45.4642° N / 9.1900° E</span>
 	</div>
 
-	<div
-		class="plate-canvas"
-		bind:this={canvas}
-		use:plateInspect={updateReadout}
-	>
+	<div class="plate-canvas" bind:this={canvas} use:plateInspect={updateReadout}>
 		<svg viewBox="0 0 680 540" role="img" aria-labelledby="plate-title">
 			<title id="plate-title">
-				System diagram: an interface connected to a service layer and a data store, with a
-				private VPN.
+				Exploded system drawing: an interface slab above a service slab and a data store, with a
+				private VPN module.
 			</title>
 
+			<defs>
+				<pattern
+					id="plate-hatch"
+					width="7"
+					height="7"
+					patternUnits="userSpaceOnUse"
+					patternTransform="rotate(45)"
+				>
+					<line
+						x1="0"
+						y1="0"
+						x2="0"
+						y2="7"
+						stroke="currentColor"
+						stroke-width="0.6"
+						opacity="0.35"
+					/>
+				</pattern>
+			</defs>
+
 			<!-- registration marks -->
-			<g fill="none" stroke="currentColor" stroke-width="1" opacity="0.35">
+			<g fill="none" stroke="currentColor" stroke-width="1" opacity="0.32">
 				<path d="M24 40V24h16M640 24h16v16M656 500v16h-16M40 516H24v-16" />
 				<path d="M340 16v8M340 516v8M16 270h8M656 270h8" />
 			</g>
 
-			<!-- section line -->
-			<g opacity="0.4">
+			<!-- vertical dimension -->
+			<g stroke="currentColor" fill="none" opacity="0.42">
 				<path
-					d="M52 58v424"
-					fill="none"
-					stroke="currentColor"
-					stroke-width="1"
-					stroke-dasharray="6 6"
+					class="draw-path"
+					pathLength="1"
+					d="M80 62v444"
+					style="--draw-delay: 100ms"
 				/>
-				<circle cx="52" cy="58" r="8" fill="var(--paper)" stroke="currentColor" />
-				<circle cx="52" cy="482" r="8" fill="var(--paper)" stroke="currentColor" />
-				<text x="52" y="61" text-anchor="middle" font-size="8" fill="currentColor">A</text>
-				<text x="52" y="485" text-anchor="middle" font-size="8" fill="currentColor">A</text>
+				<path d="M72 62h16M72 190h16M72 252h16M72 370h16M72 430h16M72 506h16" />
+				<path d="M76 66l4-6 4 6M76 502l4 6 4-6" />
 			</g>
+			<text
+				x="62"
+				y="292"
+				transform="rotate(-90 62 292)"
+				text-anchor="middle"
+				font-family="IBM Plex Mono, monospace"
+				font-size="9"
+				letter-spacing="1.6"
+				fill="currentColor"
+				opacity="0.5">SYSTEM / 03 LAYERS</text
+			>
 
-			<!-- browser / interface -->
-			<g transform="translate(150 78)">
-				<rect
-					width="330"
-					height="128"
-					fill="none"
+			<!-- 01 / interface -->
+			<g>
+				<polygon
+					points="170,80 500,80 530,62 200,62"
+					fill="var(--paper-deep)"
 					stroke="currentColor"
 					stroke-width="1.2"
 				/>
-				<line x1="0" y1="26" x2="330" y2="26" stroke="currentColor" opacity="0.4" />
-				<circle cx="13" cy="13" r="2.8" fill="none" stroke="currentColor" opacity="0.55" />
-				<circle cx="23" cy="13" r="2.8" fill="none" stroke="currentColor" opacity="0.55" />
-				<circle cx="33" cy="13" r="2.8" fill="none" stroke="currentColor" opacity="0.55" />
-				<rect x="48" y="9" width="82" height="8" fill="currentColor" opacity="0.12" />
+				<polygon
+					points="170,80 500,80 530,62 200,62"
+					fill="url(#plate-hatch)"
+					stroke="none"
+				/>
+				<polygon
+					points="500,80 530,62 530,172 500,190"
+					fill="var(--paper-deep)"
+					stroke="currentColor"
+					stroke-width="1.2"
+				/>
+				<polygon
+					points="500,80 530,62 530,172 500,190"
+					fill="url(#plate-hatch)"
+					stroke="none"
+				/>
 				<rect
-					x="16"
-					y="42"
-					width="82"
+					x="170"
+					y="80"
+					width="330"
+					height="110"
+					fill="var(--paper)"
+					stroke="currentColor"
+					stroke-width="1.5"
+				/>
+
+				<line x1="170" y1="104" x2="500" y2="104" stroke="currentColor" opacity="0.42" />
+				<circle cx="184" cy="92" r="2.4" fill="none" stroke="currentColor" opacity="0.6" />
+				<circle cx="194" cy="92" r="2.4" fill="none" stroke="currentColor" opacity="0.6" />
+				<circle cx="204" cy="92" r="2.4" fill="none" stroke="currentColor" opacity="0.6" />
+				<rect x="220" y="87" width="100" height="10" fill="currentColor" opacity="0.1" />
+
+				<rect
+					x="184"
+					y="116"
+					width="70"
 					height="58"
 					fill="none"
 					stroke="currentColor"
-					opacity="0.35"
+					opacity="0.3"
 				/>
-				<line x1="26" y1="55" x2="88" y2="55" stroke="currentColor" opacity="0.3" />
-				<line x1="26" y1="64" x2="74" y2="64" stroke="currentColor" opacity="0.18" />
-				<line x1="26" y1="73" x2="82" y2="73" stroke="currentColor" opacity="0.18" />
-				<line x1="26" y1="82" x2="66" y2="82" stroke="currentColor" opacity="0.18" />
-				<line x1="112" y1="46" x2="304" y2="46" stroke="currentColor" opacity="0.28" />
-				<line x1="112" y1="58" x2="268" y2="58" stroke="currentColor" opacity="0.18" />
-				<line x1="112" y1="70" x2="290" y2="70" stroke="currentColor" opacity="0.18" />
-				<line x1="112" y1="82" x2="240" y2="82" stroke="currentColor" opacity="0.18" />
-				<line x1="112" y1="94" x2="278" y2="94" stroke="currentColor" opacity="0.18" />
+				<line x1="194" y1="130" x2="244" y2="130" stroke="currentColor" opacity="0.28" />
+				<line x1="194" y1="140" x2="232" y2="140" stroke="currentColor" opacity="0.18" />
+				<line x1="194" y1="150" x2="240" y2="150" stroke="currentColor" opacity="0.18" />
+				<line x1="194" y1="160" x2="224" y2="160" stroke="currentColor" opacity="0.18" />
+
+				<line x1="268" y1="120" x2="482" y2="120" stroke="currentColor" opacity="0.28" />
+				<line x1="268" y1="134" x2="444" y2="134" stroke="currentColor" opacity="0.16" />
+				<line x1="268" y1="148" x2="466" y2="148" stroke="currentColor" opacity="0.16" />
+				<line x1="268" y1="162" x2="410" y2="162" stroke="currentColor" opacity="0.16" />
+
 				<rect
-					x="112"
-					y="104"
-					width="44"
-					height="12"
+					x="270"
+					y="154"
+					width="58"
+					height="15"
 					fill="none"
 					stroke="var(--accent)"
-					stroke-width="1"
+					stroke-width="1.2"
 				/>
+				<circle cx="482" cy="92" r="2.4" fill="var(--accent)" />
+
 				<text
-					x="0"
-					y="-12"
+					x="170"
+					y="48"
 					font-family="IBM Plex Mono, monospace"
-					font-size="8.5"
-					letter-spacing="1"
+					font-size="11"
+					letter-spacing="1.1"
 					fill="currentColor"
 					opacity="0.55">01 / INTERFACE</text
 				>
-				<circle cx="316" cy="13" r="2.2" fill="var(--accent)" />
 			</g>
 
-			<!-- service layer -->
-			<g transform="translate(110 258)">
-				<rect
-					width="390"
-					height="104"
-					fill="none"
+			<!-- 02 / service -->
+			<g>
+				<polygon
+					points="120,270 510,270 540,252 150,252"
+					fill="var(--paper-deep)"
 					stroke="currentColor"
 					stroke-width="1.2"
 				/>
-				<line x1="0" y1="26" x2="390" y2="26" stroke="currentColor" opacity="0.4" />
+				<polygon
+					points="120,270 510,270 540,252 150,252"
+					fill="url(#plate-hatch)"
+					stroke="none"
+				/>
+				<polygon
+					points="510,270 540,252 540,352 510,370"
+					fill="var(--paper-deep)"
+					stroke="currentColor"
+					stroke-width="1.2"
+				/>
+				<polygon
+					points="510,270 540,252 540,352 510,370"
+					fill="url(#plate-hatch)"
+					stroke="none"
+				/>
+				<rect
+					x="120"
+					y="270"
+					width="390"
+					height="100"
+					fill="var(--paper)"
+					stroke="currentColor"
+					stroke-width="1.5"
+				/>
+
+				<line x1="120" y1="288" x2="510" y2="288" stroke="currentColor" opacity="0.4" />
 				<text
-					x="12"
-					y="17"
+					x="132"
+					y="282"
 					font-family="IBM Plex Mono, monospace"
 					font-size="8.5"
-					letter-spacing="1"
+					letter-spacing="0.9"
 					fill="currentColor"
 					opacity="0.55">SERVICE LAYER</text
 				>
 				<text
-					x="378"
-					y="17"
+					x="498"
+					y="282"
 					text-anchor="end"
 					font-family="IBM Plex Mono, monospace"
 					font-size="8"
 					letter-spacing="0.8"
 					fill="currentColor"
-					opacity="0.4">03 INSTANCES</text
+					opacity="0.42">03 INSTANCES</text
 				>
 
 				<g>
 					<rect
-						x="12"
-						y="40"
-						width="110"
-						height="48"
+						x="136"
+						y="300"
+						width="108"
+						height="52"
 						fill="none"
 						stroke="currentColor"
-						opacity="0.45"
+						opacity="0.4"
 					/>
 					<text
-						x="24"
-						y="60"
+						x="146"
+						y="318"
 						font-family="IBM Plex Mono, monospace"
-						font-size="9"
-						letter-spacing="1"
+						font-size="10"
+						letter-spacing="0.9"
 						fill="currentColor">API</text
 					>
-					<line x1="24" y1="70" x2="98" y2="70" stroke="currentColor" opacity="0.2" />
-					<line x1="24" y1="77" x2="78" y2="77" stroke="currentColor" opacity="0.2" />
-					<circle cx="106" cy="52" r="2" fill="var(--accent)" />
+					<line x1="146" y1="328" x2="222" y2="328" stroke="currentColor" opacity="0.2" />
+					<line x1="146" y1="338" x2="202" y2="338" stroke="currentColor" opacity="0.2" />
+					<circle cx="232" cy="310" r="2.4" fill="var(--accent)" />
 				</g>
 
 				<g>
 					<rect
-						x="140"
-						y="40"
-						width="110"
-						height="48"
+						x="260"
+						y="300"
+						width="108"
+						height="52"
 						fill="none"
 						stroke="currentColor"
-						opacity="0.45"
+						opacity="0.4"
 					/>
 					<text
-						x="152"
-						y="60"
+						x="270"
+						y="318"
 						font-family="IBM Plex Mono, monospace"
-						font-size="9"
-						letter-spacing="1"
+						font-size="10"
+						letter-spacing="0.9"
 						fill="currentColor">WORKER</text
 					>
-					<line x1="152" y1="70" x2="226" y2="70" stroke="currentColor" opacity="0.2" />
-					<line x1="152" y1="77" x2="206" y2="77" stroke="currentColor" opacity="0.2" />
-					<circle cx="234" cy="52" r="2" fill="var(--accent)" />
+					<line x1="270" y1="328" x2="346" y2="328" stroke="currentColor" opacity="0.2" />
+					<line x1="270" y1="338" x2="326" y2="338" stroke="currentColor" opacity="0.2" />
+					<circle cx="356" cy="310" r="2.4" fill="var(--accent)" />
 				</g>
 
 				<g>
 					<rect
-						x="268"
-						y="40"
-						width="110"
-						height="48"
+						x="384"
+						y="300"
+						width="108"
+						height="52"
 						fill="none"
 						stroke="currentColor"
-						opacity="0.45"
+						opacity="0.4"
 					/>
 					<text
-						x="280"
-						y="60"
+						x="394"
+						y="318"
 						font-family="IBM Plex Mono, monospace"
-						font-size="9"
-						letter-spacing="1"
+						font-size="10"
+						letter-spacing="0.9"
 						fill="currentColor">CRON</text
 					>
-					<line x1="280" y1="70" x2="354" y2="70" stroke="currentColor" opacity="0.2" />
-					<line x1="280" y1="77" x2="334" y2="77" stroke="currentColor" opacity="0.2" />
-					<circle cx="362" cy="52" r="2" fill="var(--accent)" />
+					<line x1="394" y1="328" x2="470" y2="328" stroke="currentColor" opacity="0.2" />
+					<line x1="394" y1="338" x2="450" y2="338" stroke="currentColor" opacity="0.2" />
+					<circle cx="480" cy="310" r="2.4" fill="var(--accent)" />
 				</g>
+
+				<circle cx="126" cy="276" r="2" fill="none" stroke="currentColor" opacity="0.5" />
+				<circle cx="504" cy="276" r="2" fill="none" stroke="currentColor" opacity="0.5" />
+
+				<text
+					x="120"
+					y="238"
+					font-family="IBM Plex Mono, monospace"
+					font-size="11"
+					letter-spacing="1.1"
+					fill="currentColor"
+					opacity="0.55">02 / SERVICE</text
+				>
 			</g>
 
-			<!-- data -->
-			<g transform="translate(210 408)">
-				<ellipse
-					cx="110"
-					cy="0"
-					rx="86"
-					ry="16"
-					fill="none"
+			<!-- 04 / vpn -->
+			<g>
+				<polygon
+					points="560,290 630,290 646,280 576,280"
+					fill="var(--paper-deep)"
 					stroke="currentColor"
-					stroke-width="1.2"
+					stroke-width="1.1"
+				/>
+				<polygon
+					points="630,290 646,280 646,326 630,336"
+					fill="var(--paper-deep)"
+					stroke="currentColor"
+					stroke-width="1.1"
+				/>
+				<rect
+					x="560"
+					y="290"
+					width="70"
+					height="46"
+					fill="var(--paper)"
+					stroke="currentColor"
+					stroke-width="1.3"
+				/>
+				<text
+					x="570"
+					y="307"
+					font-family="IBM Plex Mono, monospace"
+					font-size="10"
+					letter-spacing="0.9"
+					fill="currentColor">VPN</text
+				>
+				<line x1="570" y1="313" x2="620" y2="313" stroke="currentColor" opacity="0.22" />
+				<text
+					x="570"
+					y="325"
+					font-family="IBM Plex Mono, monospace"
+					font-size="7"
+					letter-spacing="0.8"
+					fill="currentColor"
+					opacity="0.48">PRIVATE</text
+				>
+				<text
+					x="570"
+					y="334"
+					font-family="IBM Plex Mono, monospace"
+					font-size="7"
+					letter-spacing="0.8"
+					fill="currentColor"
+					opacity="0.48">NETWORK</text
+				>
+				<circle cx="626" cy="296" r="2.2" fill="var(--accent)" />
+				<text
+					x="560"
+					y="258"
+					font-family="IBM Plex Mono, monospace"
+					font-size="10"
+					letter-spacing="1"
+					fill="currentColor"
+					opacity="0.55">04 / VPN</text
+				>
+			</g>
+
+			<!-- 03 / data -->
+			<g>
+				<ellipse
+					cx="330"
+					cy="430"
+					rx="92"
+					ry="24"
+					fill="var(--paper-deep)"
+					stroke="currentColor"
+					stroke-width="1.4"
 				/>
 				<path
-					d="M24 0v64a86 16 0 0 0 172 0V0"
+					d="M238 430v44a92 24 0 0 0 184 0v-44"
+					fill="var(--paper)"
+					stroke="currentColor"
+					stroke-width="1.4"
+				/>
+				<path d="M238 448a92 24 0 0 0 184 0" fill="none" stroke="currentColor" opacity="0.28" />
+				<path d="M238 464a92 24 0 0 0 184 0" fill="none" stroke="currentColor" opacity="0.28" />
+				<ellipse
+					cx="330"
+					cy="430"
+					rx="92"
+					ry="24"
 					fill="none"
 					stroke="currentColor"
-					stroke-width="1.2"
+					stroke-width="1.4"
 				/>
-				<path d="M24 22a86 16 0 0 0 172 0" fill="none" stroke="currentColor" opacity="0.3" />
-				<path d="M24 44a86 16 0 0 0 172 0" fill="none" stroke="currentColor" opacity="0.3" />
+
+				<polygon
+					points="214,506 446,506 466,494 234,494"
+					fill="var(--paper-deep)"
+					stroke="currentColor"
+					stroke-width="1.1"
+				/>
+				<rect
+					x="214"
+					y="506"
+					width="232"
+					height="10"
+					fill="var(--paper)"
+					stroke="currentColor"
+					stroke-width="1.1"
+				/>
+				<polygon
+					points="446,506 466,494 466,504 446,516"
+					fill="var(--paper-deep)"
+					stroke="currentColor"
+					stroke-width="1.1"
+				/>
+
+				<circle cx="420" cy="436" r="2.2" fill="var(--accent)" />
+				<path d="M424 438h10" stroke="currentColor" stroke-width="0.8" opacity="0.45" />
 				<text
-					x="110"
-					y="-26"
-					text-anchor="middle"
+					x="440"
+					y="446"
 					font-family="IBM Plex Mono, monospace"
-					font-size="8.5"
-					letter-spacing="1"
+					font-size="11"
+					letter-spacing="1.1"
 					fill="currentColor"
 					opacity="0.55">03 / DATA</text
 				>
-				<circle cx="218" cy="32" r="2.2" fill="var(--accent)" />
 			</g>
 
-			<!-- private vpn -->
-			<g transform="translate(526 274)">
-				<rect
-					width="92"
-					height="66"
-					fill="none"
-					stroke="currentColor"
-					stroke-width="1.2"
-				/>
-				<text
-					x="10"
-					y="18"
-					font-family="IBM Plex Mono, monospace"
-					font-size="9"
-					letter-spacing="1"
-					fill="currentColor">VPN</text
-				>
-				<line x1="10" y1="26" x2="82" y2="26" stroke="currentColor" opacity="0.25" />
-				<text
-					x="10"
-					y="42"
-					font-family="IBM Plex Mono, monospace"
-					font-size="7.5"
-					letter-spacing="0.8"
-					fill="currentColor"
-					opacity="0.55">PRIVATE</text
-				>
-				<text
-					x="10"
-					y="54"
-					font-family="IBM Plex Mono, monospace"
-					font-size="7.5"
-					letter-spacing="0.8"
-					fill="currentColor"
-					opacity="0.55">NETWORK</text
-				>
-				<circle cx="82" cy="12" r="2.2" fill="var(--accent)" />
-			</g>
-
-			<!-- connectors -->
+			<!-- connectors and request path -->
 			<g fill="none" stroke="currentColor" stroke-width="1" opacity="0.55">
 				<path
 					class="draw-path"
 					pathLength="1"
-					d="M315 206v28h-10v24"
-					style="--draw-delay: 180ms"
+					d="M335 190v52M335 242l-3 6M335 242l3 6"
+					style="--draw-delay: 220ms"
 				/>
 				<path
 					class="draw-path"
 					pathLength="1"
-					d="M305 362v28h15v18"
+					d="M314 370v30h16v22"
 					style="--draw-delay: 360ms"
 				/>
 				<path
 					class="draw-path"
 					pathLength="1"
-					d="M500 306h26"
-					style="--draw-delay: 540ms"
+					d="M540 308h20"
+					style="--draw-delay: 500ms"
 				/>
-				<path d="M305 234l-4 5h8z" fill="currentColor" stroke="none" />
-				<path d="M320 390l-4 5h8z" fill="currentColor" stroke="none" />
-				<path d="M526 306l-5-4v8z" fill="currentColor" stroke="none" />
-				<circle cx="305" cy="234" r="2.5" fill="var(--paper)" stroke="currentColor" />
-				<circle cx="320" cy="390" r="2.5" fill="var(--paper)" stroke="currentColor" />
+				<circle cx="335" cy="270" r="2.4" fill="var(--paper)" stroke="currentColor" />
+				<circle cx="330" cy="422" r="2.4" fill="var(--paper)" stroke="currentColor" />
 			</g>
 
-			<!-- animated signal -->
 			<g fill="none" stroke="var(--accent)" stroke-width="1.2" stroke-linecap="round">
-				<path
-					class="draw-soft"
-					d="M315 206v28h-10v24"
-					style="animation-delay: 0ms"
-				/>
-				<path
-					class="draw-soft"
-					d="M305 362v28h15v18"
-					style="animation-delay: 400ms"
-				/>
-				<path
-					class="draw-soft"
-					d="M500 306h26"
-					style="animation-delay: 800ms"
-				/>
+				<path class="draw-soft" d="M335 190v52" style="animation-delay: 0ms" />
+				<path class="draw-soft" d="M314 370v30h16v22" style="animation-delay: 400ms" />
+				<path class="draw-soft" d="M540 308h20" style="animation-delay: 800ms" />
 			</g>
 
-			<!-- annotations -->
 			<g
 				font-family="IBM Plex Mono, monospace"
-				font-size="7.5"
-				letter-spacing="0.8"
+				font-size="8"
+				letter-spacing="0.7"
 				fill="currentColor"
-				opacity="0.45"
+				opacity="0.46"
 			>
-				<text x="322" y="228">HTTP / WS</text>
-				<text x="330" y="382">SQL</text>
-
-				<text x="246" y="510">INTERFACE → SERVICE → DATA</text>
+				<text x="346" y="222">HTTPS / WS</text>
+				<text x="362" y="386">SQL</text>
 			</g>
 		</svg>
 
@@ -367,5 +493,6 @@
 		<div><i></i> Interface</div>
 		<div><i></i> Service</div>
 		<div><i></i> Data</div>
+		<div><i></i> VPN</div>
 	</div>
 </figure>

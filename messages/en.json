@@ -85,6 +85,11 @@
 	"projects_empty": "Nothing matches that filter. Try a different term.",
 	"projects_clear": "Clear filters",
 	"projects_topic_note": "Tags on each project are GitHub topics.",
+	"projects_index": "Index",
+	"projects_preview": "Preview",
+	"projects_preview_hint": "Hover or focus the index to lift a title into the preview.",
+	"projects_preview_hint_mobile": "Tap a project to open its plate.",
+	"projects_open_plate": "Open plate",
 
 	"detail_back": "Back to the register",
 	"detail_plate": "Plate {index} / {total}",
@@ -202,6 +207,7 @@
 
 	"boot_status": "Calibrating sheet",
 	"index_label": "Sheet index",
+	"index_intro": "Intro",
 	"index_profile": "Profile",
 	"index_toolkit": "Toolkit",
 	"index_register": "Register",

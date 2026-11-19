@@ -85,6 +85,11 @@
 	"projects_empty": "Nessun risultato. Prova con un altro termine.",
 	"projects_clear": "Azzera i filtri",
 	"projects_topic_note": "I tag di ogni progetto sono i topic di GitHub.",
+	"projects_index": "Indice",
+	"projects_preview": "Anteprima",
+	"projects_preview_hint": "Passa il mouse o usa il focus sull’indice per portare un titolo nell’anteprima.",
+	"projects_preview_hint_mobile": "Tocca un progetto per aprire la sua tavola.",
+	"projects_open_plate": "Apri la tavola",
 
 	"detail_back": "Torna al registro",
 	"detail_plate": "Tavola {index} / {total}",
@@ -202,6 +207,7 @@
 
 	"boot_status": "Calibrazione tavola",
 	"index_label": "Indice della tavola",
+	"index_intro": "Intro",
 	"index_profile": "Profilo",
 	"index_toolkit": "Strumenti",
 	"index_register": "Registro",

@@ -4,7 +4,6 @@
 	import { contacts } from '$lib/contacts';
 	import { getRecentProjects, projectCount } from '$lib/projects';
 	import { reveal } from '$lib/actions/reveal';
-	import { parallax } from '$lib/actions/parallax';
 	import * as m from '$lib/paraglide/messages';
 	import SectionHead from '$lib/components/section-head.svelte';
 	import SystemPlate from '$lib/components/system-plate.svelte';
@@ -18,6 +17,7 @@
 	const recent = getRecentProjects(6);
 
 	const indexItems = [
+		{ id: 'intro', code: '00', label: m.index_intro() },
 		{ id: 'about', code: '01', label: m.index_profile() },
 		{ id: 'toolkit', code: '02', label: m.index_toolkit() },
 		{ id: 'work', code: '03', label: m.index_register() },
@@ -54,8 +54,10 @@
 	];
 </script>
 
-<section class="hero">
-	<div class="hero-grid" use:parallax={34} aria-hidden="true"></div>
+<div class="home-sheet">
+<SheetIndex items={indexItems} />
+
+<section id="intro" class="hero">
 	<div class="hero-crosshair" aria-hidden="true"></div>
 
 	<div class="shell hero-inner">
@@ -218,8 +220,6 @@
 	<FieldNotes />
 </section>
 
-<SheetIndex items={indexItems} />
-
 <section id="contact" class="contact-band">
 	<div class="shell contact-grid">
 		<div>
@@ -248,3 +248,5 @@
 		</div>
 	</div>
 </section>
+
+</div>

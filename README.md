@@ -139,10 +139,17 @@ src/
 
 - One warm paper ground, one ink, one signal accent. The dark theme is a graphite sheet,
   not an inverted light theme.
-- The homepage's system plate is drawn in SVG: interface, service, data and a private
-  VPN, with a signal travelling through the layers.
-- Project rows invert to ink on hover/focus and expose their topics, last commit and
-  commit count. The detail page is a technical title block plus the repository README.
+- The home page reserves a real left sheet margin for a fixed section index (00–06). A
+  single wide drafting grid — 120px modules, 480px major lines, survey marks — drifts
+  slowly behind the content.
+- The homepage's system plate is an exploded axonometric drawing: interface, service,
+  data and a private VPN, with a request path travelling through the layers. The lab
+  section uses a rack elevation instead of a generic node diagram.
+- The projects page is a split explorer: a readable right-side index lifts the hovered
+  or focused title into a sticky left preview with a same-document View Transition. The
+  preview details wait until the title settles, then fade in.
+- The home project ledger still inverts to ink on hover/focus; clicking a row opens the
+  detail plate with a shared title transition.
 - Navigation uses the View Transitions API when available, with a CSS fallback.
 - The first visit in a session gets a short “plotter registration” intro. It is skipped
   for `prefers-reduced-motion` and for repeat visits.
