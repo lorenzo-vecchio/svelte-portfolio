@@ -1,0 +1,21 @@
+{
+	"name": "Lorenzo Vecchio — Portfolio",
+	"short_name": "Lorenzo Vecchio",
+	"description": "Full-stack software developer in Milan. Web systems, developer tools, infrastructure.",
+	"start_url": "/",
+	"display": "standalone",
+	"background_color": "#f3f1ea",
+	"theme_color": "#f3f1ea",
+	"icons": [
+		{
+			"src": "/favicon.svg",
+			"type": "image/svg+xml",
+			"sizes": "any"
+		},
+		{
+			"src": "/apple-touch-icon.png",
+			"type": "image/png",
+			"sizes": "180x180"
+		}
+	]
+}

@@ -1,22 +1,24 @@
 <script lang="ts">
-  import { page } from "$app/state";
-  import * as m from "$lib/paraglide/messages";
+	import { ArrowLeft } from '@lucide/svelte';
+	import { page } from '$app/state';
+	import { localizeHref } from '$lib/paraglide/runtime';
+	import * as m from '$lib/paraglide/messages';
+
+	const is404 = $derived(page.status === 404);
 </script>
 
-<main class="max-w-4xl mx-auto px-6 w-full flex flex-col content-center justify-center min-h-screen">
-  <div class="text-center">
-    <h1 class="mb-4 text-4xl font-bold">{page.status}</h1>
-    {#if page.status === 404}
-      <p class="mb-4 text-xl text-muted-foreground">
-        {m.error_404_message()}
-      </p>
-    {:else}
-      <p class="mb-4 text-xl text-muted-foreground">
-        {m.error_generic_message()}
-      </p>
-    {/if}
-    <a href="/" class="text-primary underline hover:text-primary/90">
-      {m.error_go_home()}
-    </a>
-  </div>
-</main>
+<div class="shell error-page">
+	<div class="error-card">
+		<div class="section-code">
+			{is404 ? m.error_code() : m.error_generic_code()}
+		</div>
+		<h1>{is404 ? m.error_title() : m.error_generic_title()}</h1>
+		<p>{is404 ? m.error_body() : m.error_generic_body()}</p>
+		<div class="error-actions">
+			<a class="btn" href={localizeHref('/')}>
+				<ArrowLeft size={14} aria-hidden="true" />
+				{m.error_home()}
+			</a>
+		</div>
+	</div>
+</div>

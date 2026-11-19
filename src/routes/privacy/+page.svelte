@@ -1,72 +1,46 @@
-<script>
-  import { contacts } from "$lib/conf";
-  import * as m from "$lib/paraglide/messages";
+<script lang="ts">
+	import { ArrowLeft } from '@lucide/svelte';
+	import { localizeHref } from '$lib/paraglide/runtime';
+	import { contacts } from '$lib/contacts';
+	import * as m from '$lib/paraglide/messages';
 </script>
 
-<main class="min-h-screen mt-20 px-6 py-20 mx-auto prose md:prose-lg prose-gray dark:prose-invert max-w-4xl">
-  <h1>{m.privacy_title()}</h1>
-  <p class="last-updated">{m.privacy_last_updated()}</p>
+<div class="shell prose-page">
+	<a class="back-link" href={localizeHref('/')}>
+		<ArrowLeft size={13} aria-hidden="true" />
+		{m.privacy_back()}
+	</a>
 
-  <p>{m.privacy_intro()}</p>
+	<div class="section-code">{m.privacy_code()}</div>
+	<h1>{m.privacy_title()}</h1>
+	<p class="mono" style="margin-top: 0.75rem; color: var(--ink-faint)">{m.privacy_updated()}</p>
 
-  <section>
-    <h2>{m.privacy_h1()}</h2>
-    <p>
-      {m.privacy_no_cookies()}
-    </p>
-  </section>
+	<p>{m.privacy_intro()}</p>
 
-  <section>
-    <h2>{m.privacy_h2()}</h2>
-    <p>
-      {m.privacy_analytics_intro()}
-    </p>
-    <ul>
-      <li>
-        <strong>{m.privacy_analytics_li1_title()}</strong> {m.privacy_analytics_li1_body()}
-      </li>
-      <li>
-        <strong>{m.privacy_analytics_li2_title()}</strong> {m.privacy_analytics_li2_body()}
-      </li>
-      <li>
-        <strong>{m.privacy_analytics_li3_title()}</strong> {m.privacy_analytics_li3_body()}
-      </li>
-    </ul>
-  </section>
+	<h2>{m.privacy_h1()}</h2>
+	<p>{m.privacy_no_cookies()}</p>
+	<p>{m.privacy_local_storage()}</p>
 
-  <section>
-    <h2>{m.privacy_h3()}</h2>
-    <p>
-      {m.privacy_data_intro()}
-    </p>
-    <ul>
-      <li>{m.privacy_data_li1()}</li>
-      <li>{m.privacy_data_li2()}</li>
-    </ul>
-  </section>
+	<h2>{m.privacy_h2()}</h2>
+	<p>{m.privacy_analytics()}</p>
+	<ul>
+		<li>{m.privacy_analytics_li1()}</li>
+		<li>{m.privacy_analytics_li2()}</li>
+		<li>{m.privacy_analytics_li3()}</li>
+	</ul>
 
-  <section>
-    <h2>{m.privacy_h4()}</h2>
-    <p>
-      {m.privacy_gdpr()}
-    </p>
-  </section>
+	<h2>{m.privacy_h3()}</h2>
+	<p>{m.privacy_data()}</p>
 
-  <section>
-    <h2>{m.privacy_h5()}</h2>
-    <p>
-      {m.privacy_rights()}
-    </p>
-  </section>
+	<h2>{m.privacy_h4()}</h2>
+	<p>{m.privacy_legal()}</p>
 
-  <section>
-    <h2>{m.privacy_h6()}</h2>
-    <p>
-      {m.privacy_contact_intro()}
-    </p>
-    <p>
-      <strong>Lorenzo Vecchio</strong><br />
-      <a href={"mailto:" + contacts.email}>{contacts.email}</a>
-    </p>
-  </section>
-</main>
+	<h2>{m.privacy_h5()}</h2>
+	<p>{m.privacy_rights()}</p>
+
+	<h2>{m.privacy_h6()}</h2>
+	<p>
+		{m.privacy_contact()}
+		<a href={contacts.emailHref}>{contacts.email}</a>.
+	</p>
+</div>
