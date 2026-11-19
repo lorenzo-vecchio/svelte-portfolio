@@ -89,7 +89,7 @@
 		</ol>
 	</div>
 
-	<div class="sheet-index-foot">Sheet 01 · Rev 2026.11</div>
+	<div class="sheet-index-foot">Sheet 01 · Rev {__BUILD_REVISION__}</div>
 </nav>
 
 <style>

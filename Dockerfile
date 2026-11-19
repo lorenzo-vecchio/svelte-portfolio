@@ -34,8 +34,9 @@ COPY . .
 # The generated data is gitignored and produced by the data stage above.
 COPY --from=data /app/src/lib/data ./src/lib/data
 
-# Build static site
-RUN npm run build
+# Build static site. The data stage already refreshed GitHub data, so the
+# build-time refresh is skipped here to keep the API quota for one fetch per image.
+RUN SKIP_GITHUB_SYNC=1 npm run build
 
 # Pre-compress static assets (gzip)
 RUN find build -type f \

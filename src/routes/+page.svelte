@@ -26,33 +26,56 @@
 		{ id: 'contact', code: '06', label: m.index_contact() }
 	];
 
-	const toolkit = [
+	type KitGroup = { code: string; title: string; items: string[] };
+
+	const toolkit: KitGroup[] = [
 		{
+			code: '01',
 			title: m.toolkit_group_interface(),
-			items: ['TypeScript', 'SvelteKit', 'React', 'Angular', 'Vue.js', 'Tailwind CSS', 'Flutter']
+			items: ['TypeScript', 'SvelteKit', 'React', 'Angular', 'Vue.js', 'Next.js', 'Tailwind CSS', 'Flutter']
 		},
 		{
+			code: '02',
 			title: m.toolkit_group_service(),
-			items: ['Node.js', 'Spring Boot', 'Go', 'Python', 'Django', 'FastAPI', 'Socket.IO']
+			items: ['Node.js', 'Spring Boot', 'Go', 'Python', 'Django', 'FastAPI', 'Express', 'Socket.IO']
 		},
 		{
+			code: '03',
 			title: m.toolkit_group_data(),
 			items: ['SQL', 'PostgreSQL', 'SQLite', '4D Orda']
 		},
 		{
+			code: '04',
 			title: m.toolkit_group_infra(),
 			items: ['Docker', 'Docker Swarm', 'Kubernetes', 'Nginx', 'Linux', 'Git', 'CI/CD']
 		},
 		{
+			code: '05',
 			title: m.toolkit_group_craft(),
 			items: ['Software architecture', 'Testing', 'AI-assisted development', 'Agile / Scrum']
 		},
 		{
+			code: '06',
 			title: m.toolkit_group_languages(),
 			items: [m.toolkit_italian(), m.toolkit_english()]
 		}
 	];
 </script>
+
+{#snippet kitBlock(group: KitGroup, order: number)}
+	<article class="kit-block" use:reveal={{ delay: order * 65 }}>
+		<header class="kit-head">
+			<span class="kit-code">{group.code}</span>
+			<h3>{group.title}</h3>
+			<span class="kit-count">{String(group.items.length).padStart(2, '0')}</span>
+		</header>
+		<ul class="kit-tools">
+			{#each group.items as item, index}
+				<li style={`--i: ${index}`}>{item}</li>
+			{/each}
+		</ul>
+	</article>
+{/snippet}
 
 <div class="home-sheet">
 <SheetIndex items={indexItems} />
@@ -62,7 +85,7 @@
 
 	<div class="shell hero-inner">
 		<div class="hero-topline">
-			<span>Portfolio / Rev. 2026.11</span>
+			<span>Portfolio / Rev. {__BUILD_REVISION__}</span>
 			<span>45.4642° N / 9.1900° E</span>
 		</div>
 
@@ -172,17 +195,20 @@
 		intro={m.toolkit_intro()}
 	/>
 
-	<div class="toolkit-grid" use:reveal>
-		{#each toolkit as group}
-			<div class="toolkit-group">
-				<h3>{group.title}</h3>
-				<div class="toolkit-items">
-					{#each group.items as item}<span class="toolkit-item">{item}</span>{/each}
-				</div>
-			</div>
-		{/each}
+	<div class="kit">
+		<div class="kit-grid">
+			{#each toolkit.slice(0, 4) as group, index (group.code)}
+				{@render kitBlock(group, index)}
+			{/each}
+		</div>
+
+		<aside class="kit-side">
+			{#each toolkit.slice(4) as group, index (group.code)}
+				{@render kitBlock(group, index + 4)}
+			{/each}
+			<p class="kit-note" use:reveal={{ delay: 420 }}>{m.toolkit_now()}</p>
+		</aside>
 	</div>
-	<p class="toolkit-note">{m.toolkit_now()}</p>
 </section>
 
 <section id="work" class="section shell">

@@ -88,32 +88,13 @@
 			</div>
 			<div class="title-block-row">
 				<dt>{m.footer_revision()}</dt>
-				<dd>{m.footer_revision_value()}</dd>
+				<dd>{__BUILD_REVISION__}</dd>
 			</div>
 			<div class="title-block-row">
 				<dt>{m.footer_sheet()}</dt>
 				<dd>{m.footer_sheet_value()}</dd>
 			</div>
 		</dl>
-
-		<div class="footer-credits">
-			<span>{m.footer_credits()}:</span>
-			<a
-				href="https://wordpress.org/photos/photo/5286a11c51/"
-				target="_blank"
-				rel="noopener noreferrer">{m.footer_credit_moto()}</a
-			>
-			<a
-				href="https://commons.wikimedia.org/wiki/File:Snowy_Dolomite_town_(Unsplash_UDbwmPZvKd8).jpg"
-				target="_blank"
-				rel="noopener noreferrer">{m.footer_credit_alps()}</a
-			>
-			<a
-				href="https://commons.wikimedia.org/w/index.php?curid=46220981"
-				target="_blank"
-				rel="noopener noreferrer">{m.footer_credit_run()}</a
-			>
-		</div>
 
 		<div class="footer-bottom">
 			<span>© {year} Lorenzo Giovanni Vecchio · {m.footer_rights()}</span>

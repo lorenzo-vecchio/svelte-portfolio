@@ -18,6 +18,12 @@ export interface Project {
 	defaultBranch: string;
 }
 
+export interface ProjectRecord {
+	lead: string;
+	note: string;
+	contents: string[];
+}
+
 interface ProjectsData {
 	schemaVersion: number;
 	owner: string;

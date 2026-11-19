@@ -2,6 +2,7 @@
 	import { localizeHref } from '$lib/paraglide/runtime';
 	import { formatDate, formatNumber } from '$lib/format';
 	import { getStack, type Project } from '$lib/projects';
+	import * as m from '$lib/paraglide/messages';
 
 	let {
 		project,
@@ -40,6 +41,10 @@
 	<span class="row-stack">
 		{#each stack as topic}<span>{topic}</span>{/each}
 	</span>
-	<span class="row-date">{date}</span>
-	<span class="row-commits">{commits}</span>
+	<span class="row-meta">
+		<span class="row-date">{date}</span>
+		<span class="row-commits">
+			{commits}<span class="row-commits-label">{m.work_col_commits().toLowerCase()}</span>
+		</span>
+	</span>
 </a>

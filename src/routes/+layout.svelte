@@ -4,8 +4,7 @@
 	import { page } from '$app/state';
 	import { deLocalizeUrl, localizeHref, locales, getLocale } from '$lib/paraglide/runtime';
 	import * as m from '$lib/paraglide/messages';
-	import BootSequence from '$lib/components/boot-sequence.svelte';
-	import ScrollProgress from '$lib/components/scroll-progress.svelte';
+		import ScrollProgress from '$lib/components/scroll-progress.svelte';
 	import SiteHeader from '$lib/components/site-header.svelte';
 	import SiteFooter from '$lib/components/site-footer.svelte';
 	import { gridShift } from '$lib/actions/grid-shift';
@@ -78,7 +77,6 @@
 <div class="sheet-grid" use:gridShift aria-hidden="true"></div>
 
 <a class="skip-link" href="#main">{m.nav_skip()}</a>
-<BootSequence />
 <ScrollProgress />
 <SiteHeader />
 <main id="main" tabindex="-1">{@render children()}</main>

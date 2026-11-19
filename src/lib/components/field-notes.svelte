@@ -2,28 +2,31 @@
 	import { reveal } from '$lib/actions/reveal';
 	import { parallax } from '$lib/actions/parallax';
 	import * as m from '$lib/paraglide/messages';
+	import fieldMoto from '$lib/images/field-moto.jpg?enhanced';
+	import fieldWinter from '$lib/images/field-winter.jpg?enhanced';
+	import fieldSail from '$lib/images/field-sail.jpg?enhanced';
 
 	const notes = [
 		{
 			title: m.field_moto_title(),
 			body: m.field_moto_body(),
 			place: m.field_photo_moto(),
-			src: '/images/field-moto.jpg',
-			alt: 'An adventure motorcycle parked on a gravel mountain road'
+			src: fieldMoto,
+			alt: 'Two motorcycles parked on a mountain road'
 		},
 		{
 			title: m.field_ski_title(),
 			body: m.field_ski_body(),
 			place: m.field_photo_alps(),
-			src: '/images/field-alps.jpg',
-			alt: 'A snow-covered Dolomite village with ski slopes in the foreground'
+			src: fieldWinter,
+			alt: 'A snowy path through a larch forest'
 		},
 		{
 			title: m.field_sport_title(),
 			body: m.field_sport_body(),
 			place: m.field_photo_run(),
-			src: '/images/field-run.jpg',
-			alt: 'A runner climbing a rocky trail during the Ullswater Trail Race'
+			src: fieldSail,
+			alt: 'A sailboat with a blue spinnaker on open water'
 		}
 	];
 </script>
@@ -32,11 +35,10 @@
 	{#each notes as note, index (note.title)}
 		<figure class="field-card" use:reveal={{ delay: index * 80 }}>
 			<div class="field-media" use:parallax={-26 + index * 8}>
-				<img
+				<enhanced:img
 					src={note.src}
 					alt={note.alt}
-					width="900"
-					height="1125"
+					sizes="(min-width: 760px) 33vw, 100vw"
 					loading="lazy"
 					decoding="async"
 				/>
